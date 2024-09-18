@@ -318,7 +318,7 @@ main {
     }
 }
 input#pesquisa{
-    background-image: url('../icons/search-outline\ 1.png'); /* Caminho da imagem */
+    background-image: url('../icons/search-outline.svg'); /* Caminho da imagem */
     background-repeat: no-repeat;
     background-position: right 10px center; /* Posição da imagem no final (à direita) */
     background-size: 16px;
