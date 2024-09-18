@@ -625,8 +625,8 @@ button{
 .dataComunicado{
     border-radius: 5px;
     background-color: #b0b0b0;
-    width: 135px;
-    height: 30px;
+    width: 150px;
+    height: 45px;
     display: flex;
     align-items: center; /* Alinha verticalmente */
     justify-content: center;
