@@ -9,6 +9,7 @@ img#logo {
 }
 body{
     overflow-x: hidden;
+    font-family: 'Nunito';
 }
 input#pesquisa{
     background-image: url('../icons/search-outline.svg'); /* Caminho da imagem */
