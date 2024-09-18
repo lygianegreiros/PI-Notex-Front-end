@@ -1,0 +1,733 @@
+@font-face {
+    font-family: 'Nunito';
+    src: url('../fonts/Nunito-Medium.ttf') format('truetype');
+}
+img#logo {
+    width: 50px;
+    height: 50px;
+    margin: 20px;
+}
+body{
+    overflow-x: hidden;
+}
+input#pesquisa{
+    background-image: url('../icons/search-outline.svg'); /* Caminho da imagem */
+    background-repeat: no-repeat;
+    background-position: right 10px center; /* Posição da imagem no final (à direita) */
+    background-size: 16px;
+}
+a{
+    text-decoration: none;
+}
+p.opcaoMenu{
+    margin-left: 10px;
+    font-family: 'Nunito';
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 0.7em;
+}
+a{
+    color: black;
+}
+#visaoGeral {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#casa {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+#estudantes {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#chapeu {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+#professores {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#ribbon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+#turmas {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#livro {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+#disciplinas {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#biblioteca {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+#calendario {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#calendarioImg {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+#comunicados {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid #894E9A;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#carta {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+#horario {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#quadroDeHorarios {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+hr#linhaDoMenu{
+    width: 120px;
+    margin-left:0;
+    margin-top: 220px;
+}
+#configuracao {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#engrenagem {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+#sair {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#portaDeSair {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+input#pesquisa{
+    background-color: rgba(217, 217, 217, 0.35);
+    border: 0;
+    padding: 6px;
+    border-radius: 5px;
+    width: 250px;
+    margin-top: 10px;
+    margin-left: 30px !important;
+}
+#lupa{
+    transform: translate(-25px, 5px);
+    width: 17px;
+}
+#notificacoes-container{
+    background-color: #d9d9d9;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    margin-left: 600px;
+    position: relative
+}
+header{
+    display: flex;
+}
+#sino{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#mensagem-container{
+    background-color: #d9d9d9;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    margin-left: 10px;
+}
+#chat{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+}
+#circulo{
+    background-color: #d9d9d9;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+}
+#cinza{
+    color: rgba(0, 0, 0, 0.5);
+}
+#informacoes-de-perfil{
+    margin-left: 18px;
+    margin-top: -20px;
+}
+#cinza{
+    margin-top: -15px;
+}
+h1{
+    font-weight: normal;
+    margin-left: 30px;
+    margin-top: 0;
+    font-family: 'Nunito'
+}
+hr#linhaDoCabecalho{
+    margin-left: 10px;
+}
+p#descricao{
+    margin-left: 30px;
+    margin-top: -15px;
+    color: rgba(0, 0, 0, 0.6)
+}
+#container {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+main {
+    flex: 3;
+}
+#opcoes{
+    display: flex;
+    position: absolute;
+    top: 8px;
+    right: 50px;
+}
+@media (max-width: 1220px) {
+    #menu-container{
+        display: block;
+    }
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    table{
+        width: 90%;
+    }
+}
+@media (max-width: 1024px) {
+
+    #linhaDoCabecalho {
+        width: 98%;
+    }
+}
+@media (max-width: 770px) {
+    input#pesquisa{
+        margin-top: 40px !important;
+    }
+    #informacoes-de-perfil>p{
+        width: 50px
+    }
+}
+@media (max-width: 696px) {
+    table{
+        margin-left: 30px !important; /* Aumenta o tamanho em 1.5x */
+        transform-origin: top left;
+    }
+}
+@media(max-width: 553px){
+    #logo {
+        width: 60px;
+        margin: 10px;
+    }
+    table{
+        transform: scale(0.7);
+    }
+    .opcaoMenu{
+        font-size: 0.5em
+    }
+    h1{
+        font-size: 1.6em;
+    }  
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    p#descricao{
+        font-size: 0.9em
+    }
+}
+@media(max-width: 516){
+    #linhaDoCabecalho{
+        width: 80%;
+    }
+}
+@media (max-width: 460px){
+    input#pesquisa{
+        width: 90px !important;
+    }
+    #linhaDoCabecalho{
+        width: 80% !important;
+    }
+}
+table{
+    border-collapse: collapse;
+    border-top: none;
+    margin-top: 30px;
+    margin-left: 60px;
+    transform-origin: top left;
+    width: 90%;
+}
+table, th, td{
+    border-left: none;
+    border-right: none;
+}
+td{
+    border-left: none; /* Borda esquerda */
+    border-right: none; /* Borda direita */
+    border-top: 1px solid #c4c4c4; /* Remove a borda superior */
+    border-bottom: 1px solid #c4c4c4; 
+}
+th{
+    background-color: #DBDBDB;
+    font-size: 15px;
+    width: 107px; 
+    height: 30px;            /* Define a largura horizontal da célula */
+    text-align: center;       /* Centraliza o texto horizontalmente */
+    vertical-align: middle;   /* Centraliza o texto verticalmente */
+    padding: 10px;
+    border-top: none;
+    border-bottom: none;
+}
+td{
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    text-align: center;
+    background-color: #f5f5f5;
+}
+.bola{
+    width: 30px;
+    height: 30px;
+    background-color: #d9d9d9; /* Cor preta, pode alterar conforme necessário */
+    border-radius: 100%; /* Para fazer o círculo */
+    margin: 0 auto;
+}
+input[type="button"], button{
+    background-color: #d9d9d9;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+input[value="Adicionar Disciplina"]{
+    position: absolute;
+    top: 125px;
+    right: 40px;
+    padding: 5px;
+}
+#hamburguer{
+    display: none;
+
+}
+@media(max-width: 510px){
+    input[value="Adicionar Disciplina"]{
+        margin-top: 40px;
+    }
+    table{
+        margin-top: 50px !important;
+    }
+}
+@media (max-width: 425px){
+    h1{
+        width: 150px;
+    }
+    p#descricao{
+        width: 150px;
+    }
+    #linhaDoCabecalho{
+        width: 80%;
+    }
+}
+@media (max-width: 352px){
+    .opcaoMenu{
+        font-size: 0.4em;
+    }
+    #opcoes{
+        margin-right: -40px;
+    }
+    h1{
+        font-size: 1.3em;
+        width: 110px !important;
+    }
+    #linhaDoCabecalho{
+        width: 76% !important;
+    }
+    main{
+        width: 50% !important;
+    }
+    p#descricao{
+        width: 110px;
+    }
+}
+@media(max-width: 768px){
+    table{
+        width: 90%;
+        margin-left: 10px;
+    }
+    .bola{
+        transform: scale(0.7);
+    }
+    #botoes{
+        position: absolute;
+        top: 150px;
+        right: 10px;
+        transform: scale(0.8);
+    }
+    .opcaoMenu{
+        font-size: 0.5em !important;
+    }
+}
+
+@media(max-width: 658px){
+    table{
+        transform-origin: top left;
+        margin-left: -120px;
+    }
+    .bola{
+        transform: scale(0.7);
+    }
+    #botoes{
+        position: absolute;
+        top: 150px;
+        right: 10px;
+        transform: scale(0.7);
+    }
+    .opcaoMenu{
+        font-size: 0.4em !important;
+    }
+}
+@media(max-width: 446px){
+    table{
+        transform: scale(0.6);
+        margin-left: 20px !important;
+    }
+}
+@media(max-width: 425px){
+    table{
+        transform: scale(0.5);
+        margin-left: 0px !important;
+    }
+    .bola{
+        transform: scale(0.7);
+    }
+    #botoes{
+        position: absolute;
+        top: 190px;
+        right: 3px;
+        transform: scale(0.6);
+    }
+    .opcaoMenu{
+        font-size: 0.4em !important;
+    }
+    #menu-container{
+        transform: scale(0.9)
+    }
+    h1{
+        margin-left: 2px;
+    }
+    p#descricao{
+        margin-left: 2px;
+    }
+    #menu{
+        margin-left: -15px;
+    }
+}
+@media(max-width: 352px){
+    table{
+        transform: scale(0.37);
+        transform-origin: top left;
+        margin-left: -0px !important;
+    }
+    #botoes{
+        margin-top: -10px !important;
+    }
+    #menu{
+        transform: scale(0.9);
+        margin-top: -25px;
+    }
+}
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+#modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+}
+#modal input{
+    display: block;
+    width: 93%;
+    margin: 10px 0;
+    padding: 10px;
+}
+#modal button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+#fechar {
+    background-color: #BEBEBE;
+    color: white;
+}
+@media (max-width: 348px){
+    #modal{
+        width: 80%;
+    }
+}
+button{
+    padding: 3%;
+    width: 50%;
+    height: 50%;
+}
+@media (min-width:398px){
+    #comunicados-container{
+        width: 92%;
+    }
+}
+#comunicados-container{
+    background-color: #DDD7D7;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+#adicionarComunicado{
+    padding: 6px;
+    position: absolute;
+    top: 100px;
+    right: 40px;
+    display: flex;
+}
+.comunicado-flex{
+    display: flex;
+}
+.comunicadoClasse{
+    background-color:#FFFEFE;
+    padding: 10px;
+    margin-left: 15px;
+    border-radius: 10px;
+    width: 95%;
+    position: relative;
+    box-sizing: border-box;
+}
+.comunicado-flex>.comunicadoClasse{
+    width: 45%;
+}
+.flex-comunicados {
+    align-items: center; /* Alinha os itens verticalmente no centro */
+    justify-content: space-between; /* Distribui o espaço igualmente entre os itens */
+}
+#comunicados-container{
+    gap: 100%;
+    padding-top: 1px;
+    margin-left: 30px;
+    padding-bottom: 20px;
+}
+.eye-img{
+    position: absolute;
+    top: 20px;
+    right: 40px;
+}
+.eye-paragraph{
+    position: absolute;
+    top: 5px;
+    right: 23px;
+}
+.comunicadoClasse{
+    margin-top: 30px;
+}
+#comunicadoClasse1{
+    margin-top: 20px;
+}
+@media (max-width: 538px){
+    .comunicadoClasse{
+        width: 90%;
+    }
+}
+.dataComunicado{
+    border-radius: 5px;
+    background-color: #b0b0b0;
+    width: 135px;
+    height: 30px;
+    display: flex;
+    align-items: center; /* Alinha verticalmente */
+    justify-content: center;
+    position:absolute;
+    top: 15px;
+    right: 80px;
+}
+.criadoPor{
+    font-size: 0.9em;
+    margin-top: -20px;
+}
+@media(min-width: 836px){
+    h2.tituloComunicado {
+        margin-top: -10px;
+        max-width: 60%; /* Define a largura máxima */
+        word-wrap: break-word; /* Quebra as palavras quando excederem a largura */
+        white-space: normal; /* Permite que o texto ocupe várias linhas, se necessário */
+        overflow: hidden; /* Impede o estouro de conteúdo */
+    }
+}
+
+.descricaoDoComunicado{
+    width: 95% !important;
+    word-break: break-word;
+}
+@media (max-width: 1481px){
+    .comunicado-flex h2.tituloComunicado{
+        font-size: 1.2em;
+        top: 0;
+        width: 90px;
+    }
+    .comunicado-flex .criadoPor{
+        font-size: 0.7em;
+        top: 25px;
+    }
+}
+@media (max-width: 950px){
+    .dataComunicado{
+        position: static;
+    }
+    .eye-img{
+        position: static;
+        margin-top: 8px;
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+        line-height: normal;
+    }
+    .eye-paragraph{
+        position: static;
+        vertical-align: middle;
+        line-height: normal;
+    }
+    .eye-container{
+        display: flex;
+        place-items: center;
+        gap: 5px;
+    }
+    .descricaoDoComunicado{
+        margin-top: 40px;
+    }
+    h2.tituloComunicado{
+        width: 100% !important; /* Faz o h2 ocupar toda a largura do contêiner pai */
+        word-wrap: break-word; /* Quebra as palavras quando excedem a largura */
+        white-space: normal;
+    }
+}
+@media (max-width: 658px){
+    #adicionarComunicado{
+        margin-top: 70px;
+        margin-right: -30px;
+    }
+    #comunicados-container{
+        margin-top: 60px;
+    }
+}
+@media (max-width: 398px){
+    #adicionarComunicado{
+        margin-top: 125px;
+        margin-right: -30px;
+    }
+    #comunicados-container{
+        transform-origin: top left;
+        transform: scale(0.8)
+    }
+}
+@media(max-width: 584px){
+    .comunicado-flex{
+        flex-direction: column;
+    }
+    .comunicado-flex>.comunicadoClasse{
+        width: 90%;
+        box-sizing: border-box;
+    }
+    #comunicados-container{
+        margin-left: 0;
+    }
+}
+@media(max-width: 398px){
+    #comunicados-container{
+        margin-left: 0;
+        width: 77vw !important;
+        transform: scale(0.7);
+    }
+}

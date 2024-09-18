@@ -1,0 +1,545 @@
+@font-face {
+    font-family: 'Nunito';
+    src: url('../fonts/Nunito-Medium.ttf') format('truetype');
+}
+img#logo {
+    width: 50px;
+    height: 50px;
+    margin: 20px;
+}
+a{
+    text-decoration: none;
+}
+p.opcaoMenu{
+    margin-left: 10px;
+    font-family: 'Nunito';
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 0.7em;
+}
+a{
+    color: black;
+}
+#visaoGeral {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#casa {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+#estudantes {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#chapeu {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+#professores {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#ribbon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+#turmas {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#livro {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+#disciplinas {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#biblioteca {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+#calendario {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#calendarioImg {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+#comunicados {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#carta {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+#horario {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#quadroDeHorarios {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+#perfil{
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid #894E9A;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#emoji{
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+hr#linhaDoMenu{
+    width: 120px;
+    margin-left:0;
+    margin-top: 220px;
+}
+#configuracao {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#engrenagem {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+#sair {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#portaDeSair {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+input#pesquisa{
+    background-color: rgba(217, 217, 217, 0.35);
+    border: 0;
+    padding: 6px;
+    border-radius: 5px;
+    width: 250px;
+    margin-top: 10px;
+    margin-left: 30px !important;
+}
+#notificacoes-container{
+    background-color: #d9d9d9;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    margin-left: 600px;
+    position: relative
+}
+header{
+    display: flex;
+}
+#sino{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#mensagem-container{
+    background-color: #d9d9d9;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    margin-left: 10px;
+}
+#chat{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+}
+#circulo{
+    background-color: #d9d9d9;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+}
+#cinza{
+    color: rgba(0, 0, 0, 0.5);
+}
+#informacoes-de-perfil{
+    margin-left: 18px;
+    margin-top: -20px;
+}
+#cinza{
+    margin-top: -15px;
+}
+h1{
+    font-weight: normal;
+    margin-left: 30px;
+    margin-top: 0;
+    font-family: 'Nunito'
+}
+hr#linhaDoCabecalho{
+    margin-left: 10px;
+}
+p#descricao{
+    margin-left: 30px;
+    margin-top: -15px;
+    color: rgba(0, 0, 0, 0.6)
+}
+#container {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+main {
+    flex: 3;
+}
+#opcoes{
+    display: flex;
+    position: absolute;
+    top: 8px;
+    right: 50px;
+}
+@media (max-width: 1220px) {
+    #menu-container{
+        display: block;
+    }
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+@media (max-width: 1024px) {
+
+    #linhaDoCabecalho {
+        width: 98%;
+    }
+}
+@media (max-width: 770px) {
+    #informacoes-de-perfil>p{
+        width: 50px
+    }
+}
+@media(max-width: 895px){
+    #menu{
+        transform: scale(0.8);
+        margin-left: -20px;
+        margin-top: -70px;
+    }
+    main{
+        margin-left: -20px;
+    }
+}
+@media(max-width: 553px){
+    #logo {
+        width: 60px;
+        margin: 10px;
+    }
+    .opcaoMenu{
+        font-size: 0.5em
+    }
+    h1{
+        font-size: 1.6em;
+    }  
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    p#descricao{
+        font-size: 0.9em
+    }
+}
+@media(max-width: 516px){
+    #linhaDoCabecalho{
+        width: 80%;
+    }
+}
+@media (max-width: 460px){
+    input#pesquisa{
+        width: 90px !important;
+    }
+    #linhaDoCabecalho{
+        width: 80% !important;
+    }
+}
+input#pesquisa{
+    background-image: url('../icons/search-outline.svg'); /* Caminho da imagem */
+    background-repeat: no-repeat;
+    background-position: right 10px center; /* Posição da imagem no final (à direita) */
+    background-size: 16px;
+}
+@media (max-width: 425px){
+    h1{
+        width: 150px;
+    }
+    p#descricao{
+        width: 150px;
+    }
+    #linhaDoCabecalho{
+        width: 80%;
+    }
+}
+@media (max-width: 352px){
+    .opcaoMenu{
+        font-size: 0.4em;
+    }
+    #opcoes{
+        margin-right: -40px;
+    }
+    h1{
+        font-size: 1.3em;
+        width: 110px !important;
+    }
+    #linhaDoCabecalho{
+        width: 76% !important;
+    }
+    main{
+        width: 50% !important;
+    }
+    p#descricao{
+        width: 110px;
+    }
+}
+@media(max-width: 768px){
+    .opcaoMenu{
+        font-size: 0.5em !important;
+    }
+}
+@media(max-width: 610px){
+    input#pesquisa{
+        margin-top: 50px;
+    }
+}
+@media(max-width: 512px){
+    .opcaoMenu{
+        font-size: 0.4em !important;
+    }
+    #linhaDoCabecalho{
+        width: 92% !important;
+    }
+}
+@media(max-width: 438px){
+    .opcaoMenu{
+        font-size: 0.4em !important;
+    }
+    #menu-container{
+        transform: scale(0.9)
+    }
+    h1{
+        margin-left: 2px;
+    }
+    p#descricao{
+        margin-left: 2px;
+    }
+    #menu{
+        margin-left: -15px;
+    }
+    #filtrar-container{
+        margin-left: 0 !important;
+    }
+    #logo{
+        width: 30px !important;
+        height: 30px !important;
+    }
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.perfil-container {
+    margin: 0 auto;
+    border-radius: 8px;
+    padding: 20px;
+    transform-origin: top left;
+}
+
+.perfil-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.perfil-header img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    background-color: #ccc;
+}
+
+.perfil-info {
+    margin-left: 20px;
+}
+
+.perfil-info h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.perfil-info p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.gerenciar-btn {
+    background-color: #e0e0e0;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.perfil-detalhes {
+    margin-top: 20px;
+    background-color: #f1f1f1;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.perfil-detalhes div {
+    margin-right: 40px;
+}
+
+.perfil-detalhes div:last-child {
+    margin-right: 0;
+}
+
+.perfil-detalhes h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.perfil-detalhes p {
+    margin: 5px 0;
+}
+
+.caixa-vazia {
+    background-color: #f1f1f1;
+    height: 200px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+#avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #ccc; /* Cor da bola, ajuste conforme necessário */
+    display: inline-block;
+    margin-right: 10px; /* Espaçamento entre a bola e o nome */
+}
+#perfil-info{
+    display: flex;
+    flex-direction: row;
+}
+.perfil-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.perfil-info {
+    display: flex;
+    align-items: center;
+}
+
+#avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #ccc; /* Cor do avatar, ajuste conforme necessário */
+    margin-right: 20px; /* Espaçamento entre o avatar e as informações */
+}
+
+#nomeEId {
+    display: flex;
+    flex-direction: column;
+}
+
+#nomeEId h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+#nomeEId p {
+    margin: 0;
+    color: #555;
+}
+@media(max-width: 451px){
+    .perfil-container{
+        transform: scale(0.8);
+    }
+}
+@media(max-width: 390px){
+    .perfil-detalhes{
+        flex-direction: column;
+        width: 120%;
+    }
+    .perfil-header{
+        flex-direction: column;
+    }
+    .caixa-vazia{
+        width: 140%;
+    }
+    .gerenciar-btn{
+        margin-top: 20px;
+    }
+}

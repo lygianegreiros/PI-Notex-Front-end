@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Últimos comunicados</title>
+    <link rel="stylesheet" type="text/css" href="../CSS/comunicados.css" media="screen" />
+</head>
+<body>
+<div id="container">
+    <div id="menu-container">
+        <img id="logo" src="../icons/Senac_logo.svg.png" alt="Logo do SENAC">
+        <br>
+        <div id="menu">
+            <div id="visaoGeral" class="itemMenu">
+                <a href="visaoGeral.html">
+                    <img id="casa" src="../icons/home-outline.svg" alt="Ícone de uma casa">
+                    <p class="opcaoMenu">Visão Geral</p>
+                </a>
+            </div>
+            <br>
+            <div id="estudantes" class="itemMenu">
+                <a href="estudantes.html">
+                    <img id="chapeu" src="../icons/school-outline.svg" alt="Ícone de um chapéu de formatura">
+                    <p class="opcaoMenu">Estudantes</p>
+                </a>
+            </div>
+            <br>
+            <div id="professores" class="itemMenu">
+                <a href="professores.html">
+                    <img id="ribbon" src="../icons/ribbon-outline.svg" alt="Ícone de um laço">
+                    <p class="opcaoMenu">Professores</p>
+                </a>
+            </div>
+            <br>
+            <div id="turmas" class="itemMenu">
+                <a href="turmas.html">
+                    <img id="livro" src="../icons/book-outline.svg" alt="Ícone de um livro aberto">
+                    <p class="opcaoMenu">Turmas</p>
+                </a>
+            </div>
+            <br>
+            <div id="disciplinas" class="itemMenu">
+                <a href="disciplinas.html">
+                    <img id="biblioteca" src="../icons/library-outline.svg" alt="Ícone de uma biblioteca">
+                    <p class="opcaoMenu">Disciplinas</p>
+                </a>
+            </div>
+            <br>
+            <div id="calendario" class="itemMenu">
+                <a href="calendario.html">
+                    <img id="calendarioImg" src="../icons/calendar-number-outline.svg" alt="Ícone de um calendário">
+                    <p class="opcaoMenu">Calendário</p>
+                </a>
+            </div>
+            <br>
+            <div id="comunicados" class="itemMenu">
+                <img id="carta" src="../icons/mail-unread-outline.svg" alt="Ícone de uma carta">
+                <p class="opcaoMenu">Comunicados</p>
+            </div>
+            <br>
+            <div id="horario" class="itemMenu">
+                <a href="horario.html">
+                    <img id="quadroDeHorarios" src="../icons/calendar-outline.svg" alt="Ícone de um quadro de horários">
+                    <p class="opcaoMenu">Horário</p>
+                </a>
+            </div>
+            <hr id="linhaDoMenu" class="itemMenu">
+            <div id="configuracao">
+                <img id="engrenagem" src="../icons/settings-outline.svg" alt="Ícone de uma engrenagem">
+                <p class="opcaoMenu">Configuração</p>
+            </div>
+            <br>
+            <div id="sair" class="itemMenu">
+                <img id="portaDeSair" src="../icons/exit-outline.svg" alt="Ícone de uma porta aberta">
+                <p class="opcaoMenu">Sair</p>
+            </div>
+        </div>
+    </div>
+    <main>
+        <header>
+            <div id="input-container">
+                <input type="text" placeholder="Procurar..." id="pesquisa">
+            </div>
+            <div id="opcoes">
+                <div id="notificacoes-container">
+                    <img src="../icons/notifications-outline.svg" alt="Ícone de notificações" id="sino">
+                </div>
+                <div id="mensagem-container">
+                    <img src="../icons/chatbox-ellipses-outline.svg" alt="Ícone de chat" id="chat">
+                </div>
+                <div id="circulo"></div>
+                <a href="perfil.html">
+                    <div id="circulo"></div>
+                </a>
+                <div id="informacoes-de-perfil">
+                    <a href="perfil.html">
+                        <p>Leia O.</p>
+                        <p id="cinza">Admin</p>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <hr id="linhaDoCabecalho">
+        <h1>Últimos comunicados</h1>
+        <p id="descricao">Essas são as últimas atualizações do feed. </p>
+        <input type="button" value="Adicionar Comunicado" id="adicionarComunicado" onclick="abrirModal()">
+        <div id="comunicados-container"></div>
+    </main>
+</div>
+<div id="overlay">
+    <div id="modal">
+        <h2>Adicionar Comunicado</h2>
+        <input type="text" id="titulo" placeholder="Título">
+        <textarea name="descricaoComunicado" id="descricaoComunicado"></textarea>
+        <button onclick="salvarComunicado()">Salvar</button>
+        <button id="fechar" onclick="fecharModal()">Fechar</button>
+    </div>
+</div>
+<script src="../JS/comunicados.js">
+</script>
+</body>
+</html>

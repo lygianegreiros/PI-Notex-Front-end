@@ -1,0 +1,152 @@
+<!DOCTYPE html> 
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de estudantes</title>
+    <link rel="stylesheet" type="text/css" href="../CSS/estudantes.css" media="screen" />
+    <style>
+        /* Estilos para o overlay (modal) */
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="menu-container">
+        <img id="logo" src="../icons/Senac_logo.svg.png" alt="Logo do SENAC">
+        <br>
+        <div id="menu">
+            <div id="visaoGeral" class="itemMenu">
+                <a href="visaoGeral.html">
+                    <img id="casa" src="../icons/home-outline.svg" alt="Ícone de uma casa">
+                    <p class="opcaoMenu">Visão Geral</p>
+                </a>
+            </div>
+            <br>
+            <div id="estudantes" class="itemMenu">
+                <a href="estudantes.html">
+                    <img id="chapeu" src="../icons/school-outline.svg" alt="Ícone de um chapéu de formatura">
+                    <p class="opcaoMenu">Estudantes</p>
+                </a>
+            </div>
+            <br>
+            <div id="professores" class="itemMenu">
+                <a href="professores.html">
+                    <img id="ribbon" src="../icons/ribbon-outline.svg" alt="Ícone de um laço">
+                    <p class="opcaoMenu">Professores</p>
+                </a>
+            </div>
+            <br>
+            <div id="turmas" class="itemMenu">
+                <a href="turmas.html">
+                    <img id="livro" src="../icons/book-outline.svg" alt="Ícone de um livro aberto">
+                    <p class="opcaoMenu">Turmas</p>
+                </a>
+            </div>
+            <br>
+            <div id="disciplinas" class="itemMenu">
+                <a href="disciplinas.html">
+                    <img id="biblioteca" src="../icons/library-outline.svg" alt="Ícone de uma biblioteca">
+                    <p class="opcaoMenu">Disciplinas</p>
+                </a>
+            </div>
+            <br>
+            <div id="calendario" class="itemMenu">
+                <a href="calendario.html">
+                    <img id="calendarioImg" src="../icons/calendar-number-outline.svg" alt="Ícone de um calendário">
+                    <p class="opcaoMenu">Calendário</p>
+                </a>
+            </div>
+            <br>
+            <div id="comunicados" class="itemMenu">
+                <a href="comunicados.html">
+                    <img id="carta" src="../icons/mail-unread-outline.svg" alt="Ícone de uma carta">
+                    <p class="opcaoMenu">Comunicados</p>
+                </a>
+            </div>
+            <br>
+            <div id="horario" class="itemMenu">
+                <a href="horario.html">
+                    <img id="quadroDeHorarios" src="../icons/calendar-outline.svg" alt="Ícone de um quadro de horários">
+                    <p class="opcaoMenu">Horário</p>
+                </a>
+            </div>
+            <hr id="linhaDoMenu" class="itemMenu">
+            <div id="configuracao">
+                <img id="engrenagem" src="../icons/settings-outline.svg" alt="Ícone de uma engrenagem">
+                <p class="opcaoMenu">Configuração</p>
+            </div>
+            <br>
+            <div id="sair" class="itemMenu">
+                <img id="portaDeSair" src="../icons/exit-outline.svg" alt="Ícone de uma porta aberta">
+                <p class="opcaoMenu">Sair</p>
+            </div>
+        </div>
+    </div>
+    <main>
+        <header>
+            <div id="input-container">
+                <input type="text" placeholder="Procurar..." id="pesquisa">
+            </div>
+            <div id="opcoes">
+                <div id="notificacoes-container">
+                    <img src="../icons/notifications-outline.svg" alt="Ícone de notificações" id="sino">
+                </div>
+                <div id="mensagem-container">
+                    <img src="../icons/chatbox-ellipses-outline.svg" alt="Ícone de chat" id="chat">
+                </div>
+                <a href="perfil.html">
+                    <div id="circulo"></div>
+                </a>
+                <div id="informacoes-de-perfil">
+                    <a href="perfil.html">
+                        <p>Leia O.</p>
+                        <p id="cinza">Admin</p>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <hr id="linhaDoCabecalho">
+        <h1>Listas de estudantes</h1>
+        <p id="descricao">Listas de todos os estudantes</p>
+        <div id="botoes">
+            <input type="button" value="Adicionar Estudante" onclick="abrirModal()">
+            <input type="button" value="Gerenciar">
+        </div>
+        <div id="tabela-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Nome</th>
+                        <th>ID</th>
+                        <th>Turma</th>
+                        <th>Telefone</th>
+                        <th>Endereço</th>
+                        <th>Gerenciar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</div>
+
+<!-- Overlay (Modal) para adicionar estudante -->
+<div id="overlay">
+    <div id="modal">
+        <h2>Adicionar Estudante</h2>
+        <input type="text" id="nome" placeholder="Nome">
+        <input type="text" id="turma" placeholder="Turma">
+        <input type="text" id="telefone" placeholder="Telefone">
+        <input type="text" id="endereco" placeholder="Endereço">
+        <button onclick="salvarEstudante()">Salvar</button>
+        <button id="fechar" onclick="fecharModal()">Fechar</button>
+    </div>
+</div>
+
+<script src="../JS/estudantes.js">
+    // Função para abrir o modal
+</script>
+</body>
+</html>
