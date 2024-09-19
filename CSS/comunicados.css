@@ -9,6 +9,7 @@ img#logo {
 }
 body{
     overflow-x: hidden;
+    font-family: 'Nunito';
 }
 input#pesquisa{
     background-image: url('../icons/search-outline.svg'); /* Caminho da imagem */
@@ -604,6 +605,8 @@ button{
     position: absolute;
     top: 20px;
     right: 40px;
+    width: 20px;
+    height: 20px;
 }
 .eye-paragraph{
     position: absolute;
@@ -632,6 +635,9 @@ button{
     position:absolute;
     top: 15px;
     right: 80px;
+}
+.dataComunicado>p{
+    font-size: 0.9em;
 }
 .criadoPor{
     font-size: 0.9em;

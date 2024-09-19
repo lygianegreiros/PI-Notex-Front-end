@@ -47,7 +47,7 @@ function salvarComunicado() {
         `<div class="comunicadoClasse">
         <h2 class="tituloComunicado">${comunicado[c].titulo.value}</h2>
         <div class="dataComunicado"><p>${dataHoje}</p></div>
-        <div class="eye-container"><img class="eye-img" src='../img/eye-outline 1.png'> <p class="eye-paragraph">1<p></div>
+        <div class="eye-container"><img class="eye-img" src='../icons/eye-outline.svg'> <p class="eye-paragraph">1<p></div>
         <br>
         <p class="criadoPor">Criado por Leia O.</p>
         <br>
@@ -60,7 +60,7 @@ function salvarComunicado() {
         `<div class="comunicadoClasse">
         <h2 class="tituloComunicado">${comunicado[c].titulo.value}</h2>
         <div class="dataComunicado"><p>${dataHoje}</p></div>
-        <div class="eye-container"><img class="eye-img" src='../img/eye-outline 1.png'> <p class="eye-paragraph">1<p></div>
+        <div class="eye-container"><img class="eye-img" src='../icons/eye-outline.svg'> <p class="eye-paragraph">1<p></div>
         <br>
         <p class="criadoPor">Criado por Leia O.</p>
         <br>
@@ -74,7 +74,7 @@ function salvarComunicado() {
             <div class="comunicadoClasse" id="comunicadoClasse${c}">
                 <h2 class="tituloComunicado">${comunicado[c].titulo.value}</h2>
                 <div class="dataComunicado"><p>${dataHoje}</p></div>
-                <div class="eye-container"><img class="eye-img" src='../img/eye-outline 1.png'> <p class="eye-paragraph">1<p></div>
+                <div class="eye-container"><img class="eye-img" src='../icons/eye-outline.svg'> <p class="eye-paragraph">1<p></div>
                 <br>
                 <p class="criadoPor">Criado por Leia O.</p>
                 <br>

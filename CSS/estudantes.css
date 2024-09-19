@@ -2,6 +2,9 @@
     font-family: 'Nunito';
     src: url('../fonts/Nunito-Medium.ttf') format('truetype');
 }
+body{
+    font-family: 'Nunito';
+}
 input#pesquisa{
     background-image: url('../icons/search-outline.svg'); /* Caminho da imagem */
     background-repeat: no-repeat;

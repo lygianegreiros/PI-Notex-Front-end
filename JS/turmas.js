@@ -34,11 +34,11 @@ function adicionarTurma(serie, classe, ano) {
         <div class="turmaDiv" data-ano="${turmas[conjunto].ano.value}">
             <h3>${nomeDaTurma} <span>(${turmas[conjunto].ano.value})</span></h3>
             <br>
-            <p class="idTurma"><img src="../img/document-lock-outline 1.png">ID: MT${(posicaoAbsoluta + 1).toString().padStart(3, '0')}</p>
+            <p class="idTurma"><img src="../icons/document-lock-outline.svg">ID: MT${(posicaoAbsoluta + 1).toString().padStart(3, '0')}</p>
             <div class="horario-flex">
-                <p class="numeroEstudantes"><img src="../img/people-outline 2.png">Estudantes: 0</p>
+                <p class="numeroEstudantes"><img src="../icons/people-outline.svg">Estudantes: 0</p>
                 <div class="horario-container" data-turma-id='MT${(posicaoAbsoluta + 1).toString().padStart(3, '0')}'>
-                    <img src="../img/calendar-clear-outline 1.png" class="horasImg"><p>Horário</p>
+                    <img src="../icons/calendar-clear-outline.svg" class="horasImg"><p>Horário</p>
                 </div>
             </div>
             <input type="button" value="Acessar Turma" class="acessarTurma" onclick="acessarTurmaPerfil('${nomeDaTurma}', '${turmas[conjunto].ano.value}', '${(posicaoAbsoluta + 1).toString().padStart(3, '0')}')">
