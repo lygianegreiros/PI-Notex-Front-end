@@ -277,6 +277,18 @@ p#descricao{
 #primeiraSecao{
     display: flex;
 }
+#primeiraSecao>div{
+    width: 30%;
+}
+#segundaSecao-container{
+    width: 140%;
+}
+#secao-container{
+    width: 140%;
+}
+#segundaSecao-container>div, #secao-container>div{
+    width: 95%;
+}
 #numeroTurmas-container{
     margin-left: 20px;
     background-color: rgba(217, 217, 217, 0.7);
@@ -637,7 +649,7 @@ input#pesquisa{
 }
 .horas{
     width: 30px;
-    height: 7%;
+    height: 40px;
     position: absolute;
     border-right: 2px solid #d9d9d9;
     margin-top: 10px;

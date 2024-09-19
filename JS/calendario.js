@@ -75,17 +75,19 @@ document.addEventListener('DOMContentLoaded', function() {
     // Carrega eventos específicos do mês a partir da memória temporária
     function carregarEventos() {
         agendaContainer.innerHTML = ''; // Limpa a agenda anterior
+        console.log(dataSelecionada);
         var chaveMes = `${dataSelecionada.getMonth() + 1}-${dataSelecionada.getFullYear()}`;
+        console.log(chaveMes);
         var eventosMes = eventosPorMes[chaveMes] || [];
 
         var chaveDia = `${dataSelecionada.getDate()}-${dataSelecionada.getMonth() + 1}-${dataSelecionada.getFullYear()}`;
-        console.log(chaveDia);
         var eventosDia = eventosPorDia[chaveDia] || [];
 
         // Inicializa 3 campos fixos de anotação
         for (let i = 0; i < 3; i++) {
             if(document.getElementById('buttonMes').classList.contains('active')){
                 var evento = eventosMes[i] || { dia: '', texto: '' };
+                console.log(evento);
             }
             else if(document.getElementById('buttonDia').classList.contains('active')){
                 var evento = eventosDia[i] || { dia: '', texto: '' };
@@ -99,32 +101,66 @@ document.addEventListener('DOMContentLoaded', function() {
             agendaContainer.appendChild(anotacao);
         }
     }
+    const eventos = [];
+
 
     // Salva os eventos do mês atual na memória temporária
     function salvarEventos() {
-        const eventos = [];
         const anotacoes = agendaContainer.querySelectorAll('.anotacao');
-
+        let eventos = []; // Reinicializar o array de eventos
+    
         anotacoes.forEach(anotacao => {
             const dia = anotacao.querySelector('input').value;
             const texto = anotacao.querySelector('textarea').value;
+    
             if (dia && texto) {
-                eventos.push({ dia, texto });
-                var chaveDia = `${dia}-${dataAtual.getMonth() + 1}-${dataAtual.getFullYear()}`;
-                eventosPorDia[chaveDia] = eventos;
-                console.log(eventosPorDia);
+                // Verificar se o evento (dia e texto) já existe no mês
+                var chaveMes = `${dataSelecionada.getMonth() + 1}-${dataSelecionada.getFullYear()}`;
+                var eventoExiste = false;
+    
+                if (eventosPorMes[chaveMes]) {
+                    // Verificar se o evento (dia e texto) já está registrado no mês
+                    eventoExiste = eventosPorMes[chaveMes].some(evento => evento.dia === dia && evento.texto === texto);
+                }
+    
+                if (!eventoExiste) {
+                    // Se o evento não existe, adiciona aos arrays eventos e eventosPorDia
+                    eventos.push({ dia, texto });
+    
+                    var chaveDia = `${dia}-${dataSelecionada.getMonth() + 1}-${dataSelecionada.getFullYear()}`;
+                    if (!eventosPorDia[chaveDia]) {
+                        eventosPorDia[chaveDia] = [];
+                    }
+                    eventosPorDia[chaveDia].push({ dia, texto });
+                }
             }
         });
-
-        var chaveMes = `${dataAtual.getMonth() + 1}-${dataAtual.getFullYear()}`;
-        eventosPorMes[chaveMes] = eventos; // Salva na memória temporária
+    
+        // Criar chave para o mês
+        var chaveMes = `${dataSelecionada.getMonth() + 1}-${dataSelecionada.getFullYear()}`;
+    
+        if (!eventosPorMes[chaveMes]) {
+            eventosPorMes[chaveMes] = [];
+        }
+    
+        // Adicionar os eventos do dia ao mês, verificando antes se já existem
+        eventos.forEach(evento => {
+            var eventoExisteNoMes = eventosPorMes[chaveMes].some(e => e.dia === evento.dia && e.texto === evento.texto);
+            if (!eventoExisteNoMes) {
+                eventosPorMes[chaveMes].push(evento);
+            }
+        });
+    
+        console.log(eventosPorDia);
+        console.log(eventosPorMes);
     }
+    
     
 
     // Muda o mês e atualiza o calendário
     function mudarMes(delta) {
         salvarEventos(); // Salva os eventos antes de mudar o mês
-        dataAtual.setMonth(dataAtual.getMonth() + delta);
+        dataSelecionada.setMonth(dataSelecionada.getMonth() + delta);
         atualizarCalendario();
     }
 
@@ -229,6 +265,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('.view-option:nth-child(1)').classList.add('active');
         document.getElementById('dias-semana').innerHTML=`<div>Dom</div> <div>Seg</div> <div>Ter</div> <div>Qua</div> <div>Qui</div> <div>Sex</div>  <div>Sáb</div>`
         diasContainer.style.display = 'flex';
+        carregarEventos();
     }
 
     function showDayView() {
