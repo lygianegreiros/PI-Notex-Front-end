@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
         const opcoesMes = { month: 'long', year: 'numeric' };
-        mesAno.textContent = dataAtual.toLocaleDateString('pt-BR', opcoesMes);
+        mesAno.textContent = dataSelecionada.toLocaleDateString('pt-BR', opcoesMes);
         atualizarDias();
         carregarEventos();
     }
@@ -74,10 +74,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Carrega eventos específicos do mês a partir da memória temporária
     function carregarEventos() {
-        agendaContainer.innerHTML = ''; // Limpa a agenda anterior
+        agendaContainer.innerHTML = '<h2>Agenda</h2>'; // Limpa a agenda anterior
         console.log(dataSelecionada);
         var chaveMes = `${dataSelecionada.getMonth() + 1}-${dataSelecionada.getFullYear()}`;
-        console.log(chaveMes);
         var eventosMes = eventosPorMes[chaveMes] || [];
 
         var chaveDia = `${dataSelecionada.getDate()}-${dataSelecionada.getMonth() + 1}-${dataSelecionada.getFullYear()}`;
@@ -101,53 +100,43 @@ document.addEventListener('DOMContentLoaded', function() {
             agendaContainer.appendChild(anotacao);
         }
     }
-    const eventos = [];
+    var eventos = [];
 
 
     // Salva os eventos do mês atual na memória temporária
     function salvarEventos() {
         const anotacoes = agendaContainer.querySelectorAll('.anotacao');
         let eventos = []; // Reinicializar o array de eventos
-    
         anotacoes.forEach(anotacao => {
-            const dia = anotacao.querySelector('input').value;
-            const texto = anotacao.querySelector('textarea').value;
+            var dia = anotacao.querySelector('input').value;
+            var texto = anotacao.querySelector('textarea').value;
     
             if (dia && texto) {
-                // Verificar se o evento (dia e texto) já existe no mês
-                var chaveMes = `${dataSelecionada.getMonth() + 1}-${dataSelecionada.getFullYear()}`;
-                var eventoExiste = false;
+                // Verifica se o dia corresponde ao mês selecionado
+                const mesSelecionado = dataSelecionada.getMonth() + 1; // Mês selecionado (1 a 12)
+                const anoSelecionado = dataSelecionada.getFullYear();
+                const chaveMes = `${mesSelecionado}-${anoSelecionado}`;
+                const chaveDia = `${dia}-${mesSelecionado}-${anoSelecionado}`;
     
-                if (eventosPorMes[chaveMes]) {
-                    // Verificar se o evento (dia e texto) já está registrado no mês
-                    eventoExiste = eventosPorMes[chaveMes].some(evento => evento.dia === dia && evento.texto === texto);
-                }
+                // Verifica se o evento (dia e texto) já existe no mês
+                let eventoExiste = eventosPorMes[chaveMes]?.some(evento => evento.dia === dia && evento.texto === texto);
     
                 if (!eventoExiste) {
                     // Se o evento não existe, adiciona aos arrays eventos e eventosPorDia
                     eventos.push({ dia, texto });
     
-                    var chaveDia = `${dia}-${dataSelecionada.getMonth() + 1}-${dataSelecionada.getFullYear()}`;
                     if (!eventosPorDia[chaveDia]) {
                         eventosPorDia[chaveDia] = [];
                     }
                     eventosPorDia[chaveDia].push({ dia, texto });
+    
+                    // Adiciona o evento ao mês, se não existir
+                    if (!eventosPorMes[chaveMes]) {
+                        eventosPorMes[chaveMes] = [];
+                    }
+                    eventosPorMes[chaveMes].push({ dia, texto });
+                    console.log(eventosPorMes);
                 }
-            }
-        });
-    
-        // Criar chave para o mês
-        var chaveMes = `${dataSelecionada.getMonth() + 1}-${dataSelecionada.getFullYear()}`;
-    
-        if (!eventosPorMes[chaveMes]) {
-            eventosPorMes[chaveMes] = [];
-        }
-    
-        // Adicionar os eventos do dia ao mês, verificando antes se já existem
-        eventos.forEach(evento => {
-            var eventoExisteNoMes = eventosPorMes[chaveMes].some(e => e.dia === evento.dia && e.texto === evento.texto);
-            if (!eventoExisteNoMes) {
-                eventosPorMes[chaveMes].push(evento);
             }
         });
     
