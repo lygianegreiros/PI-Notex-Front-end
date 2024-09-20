@@ -2,6 +2,7 @@ let dataAtual = new Date();
 var dataSelecionada=new Date();
 
 document.addEventListener('DOMContentLoaded', function() {
+    
     const setaEsquerda = document.getElementById('setaEsquerda');
     const setaDireita = document.getElementById('setaDireita');
     const mesAno = document.getElementById('mesAno');
@@ -101,44 +102,63 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     var eventos = [];
-
-
     // Salva os eventos do mês atual na memória temporária
     function salvarEventos() {
         const anotacoes = agendaContainer.querySelectorAll('.anotacao');
         let eventos = []; // Reinicializar o array de eventos
-        anotacoes.forEach(anotacao => {
+        let anotacoesLista=[];
+        anotacoes.forEach((anotacao, indice) => {
             var dia = anotacao.querySelector('input').value;
             var texto = anotacao.querySelector('textarea').value;
-    
+            anotacoesLista.push({dia, texto});
             if (dia && texto) {
                 // Verifica se o dia corresponde ao mês selecionado
-                const mesSelecionado = dataSelecionada.getMonth() + 1; // Mês selecionado (1 a 12)
-                const anoSelecionado = dataSelecionada.getFullYear();
-                const chaveMes = `${mesSelecionado}-${anoSelecionado}`;
-                const chaveDia = `${dia}-${mesSelecionado}-${anoSelecionado}`;
-    
+                var mesSelecionado = dataSelecionada.getMonth() + 1; // Mês selecionado (1 a 12)
+                var anoSelecionado = dataSelecionada.getFullYear();
+                var chaveMes = `${mesSelecionado}-${anoSelecionado}`;
+                var chaveDia = `${dia}-${mesSelecionado}-${anoSelecionado}`;
+
                 // Verifica se o evento (dia e texto) já existe no mês
                 let eventoExiste = eventosPorMes[chaveMes]?.some(evento => evento.dia === dia && evento.texto === texto);
-    
+                console.log(eventosPorMes);
                 if (!eventoExiste) {
                     // Se o evento não existe, adiciona aos arrays eventos e eventosPorDia
                     eventos.push({ dia, texto });
-    
                     if (!eventosPorDia[chaveDia]) {
                         eventosPorDia[chaveDia] = [];
                     }
-                    eventosPorDia[chaveDia].push({ dia, texto });
-    
-                    // Adiciona o evento ao mês, se não existir
                     if (!eventosPorMes[chaveMes]) {
                         eventosPorMes[chaveMes] = [];
                     }
-                    eventosPorMes[chaveMes].push({ dia, texto });
+                    
+                    if (!(eventosPorDia[chaveDia][indice])) {
+                        eventosPorDia[chaveDia][indice] = { dia, texto };
+                    } else {
+                        indice = indice + 1; // Incrementa c se já existe
+                        eventosPorDia[chaveDia][indice] = { dia, texto };
+                    }
+
+                    // Adiciona o evento ao mês, se não existir
+                    if (!(eventosPorMes[chaveMes][indice])) {
+                        eventosPorMes[chaveMes][indice] = { dia, texto };
+                    } else {
+                        indice = indice + 1; // Incrementa c se já existe
+                        eventosPorMes[chaveMes][indice] = { dia, texto };
+                    }
+
                     console.log(eventosPorMes);
                 }
+                eventosPorMes[chaveMes] = (eventosPorMes[chaveMes] || []).filter(eventoDoMes =>
+                    anotacoesLista.some(anotacao => anotacao.dia === eventoDoMes.dia && anotacao.texto === eventoDoMes.texto)
+                );
+                eventosPorDia[chaveDia] = (eventosPorDia[chaveDia] || []).filter(eventoDoDia =>
+                    anotacoesLista.some(anotacao => anotacao.dia === eventoDoDia.dia && anotacao.texto === eventoDoDia.texto)
+                );
             }
         });
+        console.log(anotacoesLista);
+        
+        console.log(eventos);
     
         console.log(eventosPorDia);
         console.log(eventosPorMes);
