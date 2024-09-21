@@ -1,5 +1,6 @@
 let dataAtual = new Date();
 var dataSelecionada=new Date();
+let r=false
 
 document.addEventListener('DOMContentLoaded', function() {
     
@@ -76,7 +77,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Carrega eventos específicos do mês a partir da memória temporária
     function carregarEventos() {
         agendaContainer.innerHTML = '<h2>Agenda</h2>'; // Limpa a agenda anterior
-        console.log(dataSelecionada);
         var chaveMes = `${dataSelecionada.getMonth() + 1}-${dataSelecionada.getFullYear()}`;
         var eventosMes = eventosPorMes[chaveMes] || [];
 
@@ -106,11 +106,9 @@ document.addEventListener('DOMContentLoaded', function() {
     function salvarEventos() {
         const anotacoes = agendaContainer.querySelectorAll('.anotacao');
         let eventos = []; // Reinicializar o array de eventos
-        let anotacoesLista=[];
         anotacoes.forEach((anotacao, indice) => {
             var dia = anotacao.querySelector('input').value;
             var texto = anotacao.querySelector('textarea').value;
-            anotacoesLista.push({dia, texto});
             if (dia && texto) {
                 // Verifica se o dia corresponde ao mês selecionado
                 var mesSelecionado = dataSelecionada.getMonth() + 1; // Mês selecionado (1 a 12)
@@ -119,44 +117,49 @@ document.addEventListener('DOMContentLoaded', function() {
                 var chaveDia = `${dia}-${mesSelecionado}-${anoSelecionado}`;
 
                 // Verifica se o evento (dia e texto) já existe no mês
-                let eventoExiste = eventosPorMes[chaveMes]?.some(evento => evento.dia === dia && evento.texto === texto);
+                let eventoExisteMes = eventosPorMes[chaveMes]?.some(evento => evento.dia === dia && evento.texto === texto);
                 console.log(eventosPorMes);
-                if (!eventoExiste) {
+                if (!eventoExisteMes) {
                     // Se o evento não existe, adiciona aos arrays eventos e eventosPorDia
                     eventos.push({ dia, texto });
-                    if (!eventosPorDia[chaveDia]) {
-                        eventosPorDia[chaveDia] = [];
-                    }
+
                     if (!eventosPorMes[chaveMes]) {
                         eventosPorMes[chaveMes] = [];
                     }
-                    
-                    if (!(eventosPorDia[chaveDia][indice])) {
-                        eventosPorDia[chaveDia][indice] = { dia, texto };
-                    } else {
-                        indice = indice + 1; // Incrementa c se já existe
-                        eventosPorDia[chaveDia][indice] = { dia, texto };
+        
+                    // Inicializa o array para o dia, caso não exista
+                    if (!eventosPorDia[chaveDia]) {
+                        eventosPorDia[chaveDia] = [];
                     }
 
+                    if(eventosPorDia[chaveDia][indice]){
+                        eventosPorMes[chaveMes][indice]={ dia, texto };
+                        eventosPorDia[chaveDia][indice]={ dia, texto };
+                        delete eventosPorMes[chaveMes][indice];
+                    }
+                    else{
+                        if (!(eventosPorDia[chaveDia][indice])) {
+                            eventosPorDia[chaveDia][indice] = { dia, texto };
+                        } else {
+                            indice = indice + 1; // Incrementa c se já existe
+                            console.log(indice);
+                            eventosPorDia[chaveDia][indice] = { dia, texto };
+                        }
+                    }
+                    
                     // Adiciona o evento ao mês, se não existir
                     if (!(eventosPorMes[chaveMes][indice])) {
                         eventosPorMes[chaveMes][indice] = { dia, texto };
                     } else {
-                        indice = indice + 1; // Incrementa c se já existe
+                        indice = indice + 1;
+                        console.log(indice); // Incrementa c se já existe
                         eventosPorMes[chaveMes][indice] = { dia, texto };
+                        console.log(eventosPorMes);
                     }
-
-                    console.log(eventosPorMes);
                 }
-                eventosPorMes[chaveMes] = (eventosPorMes[chaveMes] || []).filter(eventoDoMes =>
-                    anotacoesLista.some(anotacao => anotacao.dia === eventoDoMes.dia && anotacao.texto === eventoDoMes.texto)
-                );
-                eventosPorDia[chaveDia] = (eventosPorDia[chaveDia] || []).filter(eventoDoDia =>
-                    anotacoesLista.some(anotacao => anotacao.dia === eventoDoDia.dia && anotacao.texto === eventoDoDia.texto)
-                );
+                
             }
         });
-        console.log(anotacoesLista);
         
         console.log(eventos);
     
@@ -219,7 +222,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('dias-semana').innerHTML=`<div> ${nomeDoDia}</div>`;
         diaDoMes.style.display = 'block'; // Garante que o dia atual seja exibido
         dataSelecionada=dataAtual;
-        console.log(dataSelecionada);
         mesAno.textContent = dataAtual.toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' });
     }
 
@@ -229,6 +231,7 @@ document.addEventListener('DOMContentLoaded', function() {
             navegarSemana(-1); // Semana anterior
         } else if (document.querySelector('.view-option:nth-child(3)').classList.contains('active')) {
             dataAtual.setDate(dataAtual.getDate() - 1);
+            salvarEventos();
             atualizarDia();
         } else {
             mudarMes(-1); // Mês anterior
@@ -240,6 +243,7 @@ document.addEventListener('DOMContentLoaded', function() {
             navegarSemana(1); // Próxima semana
         } else if (document.querySelector('.view-option:nth-child(3)').classList.contains('active')) {
             dataAtual.setDate(dataAtual.getDate() + 1);
+            salvarEventos();
             atualizarDia();
         } else {
             mudarMes(1); // Próximo mês
