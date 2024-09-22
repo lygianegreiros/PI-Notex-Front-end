@@ -13,19 +13,6 @@ let eventosPorMes = {};
 let eventosPorSemana = {};
 let eventosPorDia = {};
 
-function filtrarValoresUnicos(obj) {
-    const valoresUnicos = new Set();
-    const novoObjeto = {};
-
-    for (const [chave, valor] of Object.entries(obj)) {
-        if (!valoresUnicos.has(valor)) {
-            valoresUnicos.add(valor);
-            novoObjeto[chave] = valor;
-        }
-    }
-
-    return novoObjeto;
-}
 // Atualiza o cabeçalho do mês e ano
 function atualizarCalendario() {
     var inputs = document.querySelectorAll('input[type="number"]');
