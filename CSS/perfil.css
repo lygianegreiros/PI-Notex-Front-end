@@ -6,8 +6,7 @@ body{
     font-family: 'Nunito';
 }
 img#logo {
-    width: 50px;
-    height: 50px;
+    width: 80px;
     margin: 20px;
 }
 a{
@@ -130,7 +129,7 @@ a{
 #perfil{
     display: inline-flex;
     align-items: center;
-    border: 1px solid #894E9A;
+    background-color: #FF8744;
     border-radius: 10px;
     padding-left: 8px;
     padding-right: 30px;
@@ -442,20 +441,22 @@ body {
 }
 
 .gerenciar-btn {
-    background-color: #e0e0e0;
+    background-color: #FF8744;
     border: none;
     padding: 8px 16px;
     border-radius: 4px;
     cursor: pointer;
+    color: white;
 }
 
 .perfil-detalhes {
     margin-top: 20px;
-    background-color: #f1f1f1;
+    background-color: white;
     padding: 15px;
     border-radius: 8px;
     display: flex;
     justify-content: space-between;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5); /* Cria o efeito de sombra */
 }
 
 .perfil-detalhes div {
@@ -476,18 +477,21 @@ body {
 }
 
 .caixa-vazia {
-    background-color: #f1f1f1;
+    background-color: white;
     height: 200px;
     border-radius: 8px;
     margin-top: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5); /* Cria o efeito de sombra */
+
 }
 #avatar {
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    background-color: #ccc; /* Cor da bola, ajuste conforme necessário */
+    background-color: white; /* Cor da bola, ajuste conforme necessário */
     display: inline-block;
     margin-right: 10px; /* Espaçamento entre a bola e o nome */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Cria o efeito de sombra */
 }
 #perfil-info{
     display: flex;
@@ -502,14 +506,6 @@ body {
 .perfil-info {
     display: flex;
     align-items: center;
-}
-
-#avatar {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    background-color: #ccc; /* Cor do avatar, ajuste conforme necessário */
-    margin-right: 20px; /* Espaçamento entre o avatar e as informações */
 }
 
 #nomeEId {

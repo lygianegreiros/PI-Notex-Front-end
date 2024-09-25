@@ -88,7 +88,7 @@ p.opcaoMenu{
 #calendario {
     display: inline-flex;
     align-items: center;
-    border: 1px solid #894E9A;
+    background-color: #FF8744;
     border-radius: 10px;
     padding-left: 8px;
     padding-right: 30px;
@@ -533,12 +533,14 @@ input[type="button"]{
 #calendario-container {
 margin-left: 30px;
 margin-top: 20px;
-background-color: rgba(217, 217, 217, 0.7);
+background-color: white;
 width: 100%;
 height: auto;
 border-radius: 7px;
 padding: 20px;
 transform-origin: top left;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Cria o efeito de sombra */
+transition: box-shadow 0.3s ease;
 }
 #topo-calendario {
 display: flex;
@@ -572,21 +574,23 @@ height: 80px;
 display: flex;
 justify-content: center;
 align-items: center;
-background-color: rgba(217, 217, 217, 0.7);
+background-color: white;
 border-radius: 5px;
 margin-bottom: 10px;
 font-family: 'Nunito';
 font-size: 1.2em;
+box-shadow: 0 0px 5px rgba(0, 0, 0, 0.3); /* Cria o efeito de sombra */
 }
 #agenda-container {
 margin-left: 30px;
 margin-top: 20px;
 height: auto;
-background-color: rgba(217, 217, 217, 0.7);
+background-color: white;
 width: 30%;
 border-radius: 7px;
 padding: 20px;
 transform-origin: top left;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Cria o efeito de sombra */
 }
 #agenda-container h2 {
 font-family: 'Nunito';
@@ -612,7 +616,7 @@ border: none;
 .anotacao textarea {
 flex: 1;
 margin-right: 10px;
-background-color: #B5B5B5;
+background-color: transparent;
 border: none;
 }
 .anotacao textarea.descricao {
@@ -703,11 +707,13 @@ input[type="number"]{
 .view-selector {
     display: inline-flex;
     border-radius: 10px;
-    background-color: #e0e0e0;
+    background-color: white;
     padding: 5px;
     transform-origin: top left;
     margin-left: 30px;
     gap: 4px;
+    box-shadow: 0 0px 6px rgba(0, 0, 0, 0.3); /* Cria o efeito de sombra */
+    transition: box-shadow 0.3s ease;
   }
   
   .view-option {
@@ -721,8 +727,7 @@ input[type="number"]{
   }
   
   .view-option.active {
-    background-color: #ffffff;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 135, 68, 0.46);
   }
   
   .view-option:hover {
@@ -740,11 +745,12 @@ input[type="number"]{
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: rgba(217, 217, 217, 0.7);
+        background-color: white;
         border-radius: 5px;
         margin-bottom: 10px;
         font-family: 'Nunito';
         font-size: 1.2em;
+        box-shadow: 0 0px 5px rgba(0, 0, 0, 0.3); /* Cria o efeito de sombra */
     }
     #diaDoMes {
         display: flex;
@@ -759,11 +765,12 @@ input[type="number"]{
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: rgba(217, 217, 217, 0.7);
+        background-color: white;
         border-radius: 5px;
         margin-bottom: 10px;
         font-family: 'Nunito';
         font-size: 1.2em;
+        box-shadow: 0 0px 5px rgba(0, 0, 0, 0.3); /* Cria o efeito de sombra */
         margin: auto;
     }
     #dia-semana {
@@ -771,4 +778,29 @@ input[type="number"]{
     }
     #dias-semana div {
         margin: auto;
+    }
+    #agenda-container>:nth-child(2){
+        
+        background-color: #FF8744;
+    }
+    #agenda-container>:nth-child(3){
+        
+        background-color: rgba(0, 84, 149, 0.5);
+    }
+    #agenda-container>:nth-child(4){
+        
+        background-color: #F6C087;
+    }
+    #agenda-container>:nth-child(5){
+        
+        background-color: #005495;
+    }
+    .anotacao>input, .anotacao>textarea{
+        color: white;
+    }
+    .anotacao>input::placeholder, .anotacao>textarea::placeholder{
+        color: white;
+    }
+    .anotacao>input{
+        border: 1px solid white;
     }

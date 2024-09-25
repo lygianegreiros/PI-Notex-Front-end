@@ -34,7 +34,7 @@
             </div>
             <br>
             <div id="turmas" class="itemMenu">
-                <img id="livro" src="../icons/book-outline.svg" alt="Ícone de um livro aberto">
+                <img id="livro" src="../icons/book-outline 1.png" alt="Ícone de um livro aberto">
                 <p class="opcaoMenu">Turmas</p>
             </div>
             <br>
@@ -103,14 +103,21 @@
         <hr id="linhaDoCabecalho">
         <h1>Listas de turmas</h1>
         <p id="descricao">Lista de todas as turmas. <span>- você pode filtrar por turmas</span> </p>
-        <div id="botoes">
-            <input type="button" value="Adicionar Turma" onclick="openOverlay()" id="botaoAdicionarTurma">
-            <input type="button" value="Gerenciar">
-        </div>
+        <input type="button" value="Adicionar Turma" onclick="openOverlay()" id="botaoAdicionarTurma">
         <select name="anoSelect" id="anoSelect">
             <option value="anoOption" hidden selected>Ano</option>
         </select>
         <div id="espacoTurmas"></div>
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <h2>Deletar item</h2>
+                <p>Você tem certeza que deseja deletar esta lista?<br>Esta ação não pode ser revertida.</p>
+                <div class="modal-buttons">
+                    <button id="cancelBtn" class="cancel-btn">Cancelar</button>
+                    <button id="deleteBtn" class="delete-btn">Deletar</button>
+                </div>
+            </div>
+        </div>
     </main>
 </div>
 <div id="overlay" class="overlay">

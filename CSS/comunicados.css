@@ -3,8 +3,7 @@
     src: url('../fonts/Nunito-Medium.ttf') format('truetype');
 }
 img#logo {
-    width: 50px;
-    height: 50px;
+    width: 80px;
     margin: 20px;
 }
 body{
@@ -111,7 +110,7 @@ a{
 #comunicados {
     display: inline-flex;
     align-items: center;
-    border: 1px solid #894E9A;
+    background-color: #FF8744;
     border-radius: 10px;
     padding-left: 8px;
     padding-right: 30px;
@@ -565,7 +564,7 @@ button{
     }
 }
 #comunicados-container{
-    background-color: #DDD7D7;
+    background-color: white;
     border-radius: 8px;
     box-sizing: border-box;
 }
@@ -580,13 +579,15 @@ button{
     display: flex;
 }
 .comunicadoClasse{
-    background-color:#FFFEFE;
+    background-color:white;
     padding: 10px;
     margin-left: 15px;
     border-radius: 10px;
     width: 95%;
     position: relative;
     box-sizing: border-box;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5); /* Cria o efeito de sombra */
+    transition: box-shadow 0.3s ease;
 }
 .comunicado-flex>.comunicadoClasse{
     width: 45%;
@@ -626,7 +627,7 @@ button{
 }
 .dataComunicado{
     border-radius: 5px;
-    background-color: #b0b0b0;
+    background-color: #FF8744;
     width: 135px;
     height: 30px;
     display: flex;

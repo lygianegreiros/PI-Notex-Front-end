@@ -47,7 +47,7 @@
             </div>
             <br>
             <div id="calendario" class="itemMenu">
-                <img id="calendarioImg" src="../icons/calendar-number-outline.svg" alt="Calendário">
+                <img id="calendarioImg" src="../icons/calendar-number-outline 1.svg" alt="Calendário">
                 <p class="opcaoMenu">Calendário</p>
             </div>
             <br>
@@ -102,9 +102,9 @@
         <h1>Esse é o seu calendário</h1>
         <p id="descricao">Confira sua programação.</p>
         <div class="view-selector">
-            <button id="buttonMes" class="view-option active" onclick="showMonthView()">Mês</button>
+            <button id="buttonMes" class="view-option active" onclick="salvarEventos()" onclick="showMonthView()">Mês</button>
             <button id="buttonSemana" class="view-option" onclick="showWeekView()">Semana</button>
-            <button id="buttonDia" class="view-option" onclick="showDayView()">Dia</button>
+            <button id="buttonDia" class="view-option" onclick="salvarEventos()" onclick="showDayView()">Dia</button>
           </div>          
         <div id="calendarioEAgenda">
             <div id="calendario-container">
@@ -162,15 +162,19 @@
                 <h2>Agenda</h2>
                 <div class="anotacao">
                     <input type="number" placeholder="Dia" id="dia1" min="1" max="31">
-                    <textarea>Evento</textarea>
+                    <textarea placeholder="Evento"></textarea>
                 </div>
                 <div class="anotacao">
                     <input type="number" placeholder="Dia" id="dia2" min="1" max="31">
-                    <textarea>Evento</textarea>
+                    <textarea placeholder="Evento"></textarea>
                 </div>
                 <div class="anotacao">
                     <input type="number" placeholder="Dia" id="dia3" min="1" max="31">
-                    <textarea>Evento</textarea>
+                    <textarea placeholder="Evento"></textarea>
+                </div>
+                <div class="anotacao">
+                    <input type="number" placeholder="Dia" id="dia4" min="1" max="31">
+                    <textarea placeholder="Evento"></textarea>
                 </div>
             </div>
         </div>
