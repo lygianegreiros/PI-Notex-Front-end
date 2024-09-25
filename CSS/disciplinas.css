@@ -6,8 +6,7 @@ body{
     font-family: 'Nunito';
 }
 img#logo {
-    width: 50px;
-    height: 50px;
+    width: 80px;
     margin: 20px;
 }
 input#pesquisa{
@@ -84,7 +83,7 @@ a{
 #disciplinas {
     display: inline-flex;
     align-items: center;
-    border: 1px solid #894E9A;
+    background-color: #FF8744;
     border-radius: 10px;
     padding-left: 8px;
     padding-right: 30px;
@@ -338,11 +337,11 @@ table, th, td{
 td{
     border-left: none; /* Borda esquerda */
     border-right: none; /* Borda direita */
-    border-top: 1px solid #c4c4c4; /* Remove a borda superior */
-    border-bottom: 1px solid #c4c4c4; 
+    border-top: 0.1px solid black;
+    border-bottom: 0.1px solid black; 
 }
 th{
-    background-color: #DBDBDB;
+    background-color: white;
     font-size: 15px;
     width: 107px; 
     height: 30px;            /* Define a largura horizontal da célula */
@@ -368,10 +367,11 @@ td{
     margin: 0 auto;
 }
 input[type="button"], button{
-    background-color: #d9d9d9;
+    background-color: #FF8744;
     border: none;
     border-radius: 3px;
     cursor: pointer;
+    color: white;
 }
 input[value="Adicionar Disciplina"]{
     position: absolute;

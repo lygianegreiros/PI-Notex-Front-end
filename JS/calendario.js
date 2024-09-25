@@ -34,15 +34,9 @@ function obterNumeroDiasNoMes(mes, ano) {
 
 // Renderiza os dias no calendário
 function atualizarDias() {
-    var inputs = document.querySelectorAll('input[type="number"]');
-    inputs.forEach(input => {
-        input.addEventListener('input', function() {
-            validateDayInput(input);
-        });
-    });
     diasContainer.innerHTML = ''; // Limpa os dias anteriores
-    const numeroDias = obterNumeroDiasNoMes(dataAtual.getMonth(), dataAtual.getFullYear());
-    const primeiroDiaSemana = new Date(dataAtual.getFullYear(), dataAtual.getMonth(), 1).getDay();
+    const numeroDias = obterNumeroDiasNoMes(dataSelecionada.getMonth(), dataSelecionada.getFullYear());
+    const primeiroDiaSemana = new Date(dataSelecionada.getFullYear(), dataSelecionada.getMonth(), 1).getDay();
 
     // Preenche os dias da semana antes do primeiro dia do mês
     for (let i = 0; i < primeiroDiaSemana; i++) {
@@ -81,7 +75,7 @@ function carregarEventos() {
     console.log(eventosDia);
 
     // Inicializa 3 campos fixos de anotação
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 4; i++) {
         if(document.getElementById('buttonMes').classList.contains('active')){
             var evento = eventosMes[i] || { dia: '', texto: '' };
             console.log(evento);
@@ -115,8 +109,15 @@ function salvarEventos() {
         if (document.getElementById('buttonDia').classList.contains('active')) {
             var dia = dataSelecionada.getDate();
         } else{
-            var dia = anotacao.querySelector('input').value;
+            var inputElement = anotacao.querySelector('input');
+            if (inputElement) {
+                var dia = inputElement.value;
+            } else {
+                console.log('Elemento input não encontrado na anotação');
+                var dia = ''; // Definir dia como vazio ou outra lógica
+            }
         }
+        
         var texto = anotacao.querySelector('textarea').value;
         console.log(texto);
         if (dia && texto) {

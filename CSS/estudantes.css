@@ -15,8 +15,7 @@ a{
     text-decoration: none;
 }
 img#logo {
-    width: 50px;
-    height: 50px;
+    width: 80px;
     margin: 20px;
 }
 p.opcaoMenu{
@@ -49,7 +48,7 @@ a{
     padding-left: 8px;
     padding-right: 30px;
     margin-bottom: -4px;
-    border: 1px solid #894E9A;
+    background-color: #FF8744;
 
 }
 #chapeu {
@@ -331,7 +330,7 @@ th, td {
 }
 
 th {
-    background-color: #EAE6E6;
+    background-color: white;
     font-size: 15px;
 }
 
@@ -383,7 +382,7 @@ td{
     border-bottom: 1px solid #c4c4c4; 
 }
 th{
-    background-color: #EAE6E6;
+    background-color: white;
     font-size: 15px;
     width: 107px; 
     height: 30px;            /* Define a largura horizontal da célula */
@@ -409,10 +408,11 @@ td{
     margin: 0 auto;
 }
 input[type="button"], button{
-    background-color: #d9d9d9;
+    background-color: #FF8744;
     border: none;
     border-radius: 6px;
     cursor: pointer;
+    color: white;
 }
 input[type="button"]{
     padding: 3%;
@@ -436,7 +436,7 @@ div#tabela-container{
     height: auto;
     padding-top: 0.05px;
     padding-left: 0;
-    background-color: #EAE6E6;
+    background-color: white;
     border-radius: 10px;
     margin-left: 30px;
     margin-top: 40px;
