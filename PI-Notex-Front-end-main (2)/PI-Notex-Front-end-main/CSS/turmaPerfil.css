@@ -1,0 +1,857 @@
+@font-face {
+    font-family: 'Nunito';
+    src: url('../fonts/Nunito-Medium.ttf') format('truetype');
+}
+body{
+    font-family: 'Nunito';
+}
+input#pesquisa{
+    background-image: url('../icons/search-outline.svg'); /* Caminho da imagem */
+    background-repeat: no-repeat;
+    background-position: right 10px center; /* Posição da imagem no final (à direita) */
+    background-size: 16px;
+}
+a{
+    text-decoration: none;
+}
+img#logo {
+    width: 80px;
+    margin: 20px;
+}
+p.opcaoMenu{
+    margin-left: 10px;
+    font-family: 'Nunito';
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 0.7em;
+}
+a{
+    color: black;
+}
+#visaoGeral {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#casa {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+#estudantes {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+
+}
+#chapeu {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+#professores {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#ribbon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+#turmas {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+    background-color: #FF8744;
+}
+#livro {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+#disciplinas {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#biblioteca {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+#calendario {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#calendarioImg {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+#comunicados {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#carta {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+#horario {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#quadroDeHorarios {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+hr#linhaDoMenu{
+    width: 120px;
+    margin-left:0;
+    margin-top: 220px;
+}
+#configuracao {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#engrenagem {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+#sair {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#portaDeSair {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+input#pesquisa{
+    background-color: rgba(217, 217, 217, 0.35);
+    border: 0;
+    padding: 6px;
+    border-radius: 5px;
+    width: 250px;
+    margin-top: 10px;
+    margin-left: 30px !important;
+}
+#lupa{
+    transform: translate(-25px, 5px);
+    width: 17px;
+}
+#notificacoes-container{
+    background-color: #d9d9d9;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    margin-left: 600px;
+    position: relative
+}
+header{
+    display: flex;
+}
+#sino{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#mensagem-container{
+    background-color: #d9d9d9;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    margin-left: 10px;
+}
+#chat{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+}
+#circulo{
+    background-color: #d9d9d9;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+}
+#cinza{
+    color: rgba(0, 0, 0, 0.5);
+}
+#informacoes-de-perfil{
+    margin-left: 18px;
+    margin-top: -20px;
+}
+#cinza{
+    margin-top: -15px;
+}
+h1{
+    font-weight: normal;
+    margin-left: 30px;
+    margin-top: 0;
+    font-family: 'Nunito'
+}
+hr#linhaDoCabecalho{
+    margin-left: 10px;
+}
+p#descricao{
+    margin-left: 30px;
+    margin-top: -15px;
+    color: rgba(0, 0, 0, 0.6)
+}
+#container {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+main {
+    flex: 3;
+}
+#opcoes{
+    display: flex;
+    position: absolute;
+    top: 8px;
+    right: 50px;
+}
+@media (max-width: 1220px) {
+    #menu-container{
+        display: block;
+    }
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    table#estudantesTabela{
+        margin-left: 13px !important;
+    }
+}
+@media (max-width: 1024px) {
+
+    #linhaDoCabecalho {
+        width: 98%;
+    }
+}
+@media (max-width: 770px) {
+    input#pesquisa{
+        margin-top: 40px !important;
+    }
+    #informacoes-de-perfil>p{
+        width: 50px
+    }
+}
+@media(max-width: 553px){
+    #logo {
+        width: 60px;
+        margin: 10px;
+    }
+    .opcaoMenu{
+        font-size: 0.5em
+    }
+    h1{
+        font-size: 1.6em;
+    }  
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    p#descricao{
+        font-size: 0.9em
+    }
+}
+@media(max-width: 516px){
+    #linhaDoCabecalho{
+        width: 80%;
+    }
+}
+@media (max-width: 460px){
+    input#pesquisa{
+        width: 90px !important;
+    }
+    #linhaDoCabecalho{
+        width: 80% !important;
+    }
+}
+table#estudantesTabela {
+    border-collapse: collapse;
+    margin-top: 30px;
+    margin-left: 15px;
+    width: 90%;
+    table-layout: auto;
+    transform-origin: top left;
+}
+
+th, td {
+    border: 1px solid #c4c4c4;
+    padding: 10px;
+    text-align: center;
+    width: 30px !important;
+}
+#calendario-container th, #calendario-container td{
+    width: 25px;
+}
+
+th {
+    background-color: #EAE6E6;
+    font-size: 15px;
+}
+
+td {
+    background-color: #f5f5f5;
+    height: 40px;
+}
+@media(max-width: 762px){
+    #tabela-container{
+        transform: scale(0.8);
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajustar a escala da tabela para dispositivos muito pequenos */
+    table {
+        font-size: 0.8em;
+    }
+
+    /* Adicionar rolagem horizontal se necessário */
+    #tabela-container {
+        overflow-x: auto;
+    }
+}
+
+tbody tr:first-child td:first-child {
+    border-top-left-radius: 10px;
+}
+
+tbody tr:first-child td:last-child {
+    border-top-right-radius: 10px;
+}
+
+tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+table#estudantesTabel, #estudantesTabela th, #estudantesTabela td{
+    border-left: none;
+    border-right: none;
+}
+#estudantesTabela td{
+    border-left: none; /* Borda esquerda */
+    border-right: none; /* Borda direita */
+    border-top: 1px solid #c4c4c4; /* Remove a borda superior */
+    border-bottom: 1px solid #c4c4c4; 
+}
+#estudantesTabela th{
+    background-color: white;
+    font-size: 15px;
+    width: 107px; 
+    height: 30px;            /* Define a largura horizontal da célula */
+    text-align: center;       /* Centraliza o texto horizontalmente */
+    vertical-align: middle;   /* Centraliza o texto verticalmente */
+    padding: 10px;
+    border-top: none;
+    border-bottom: none;
+}
+#estudantesTabela td{
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    text-align: center;
+    background-color: white;
+}
+.bola{
+    width: 30px !important;
+    height: 30px !important;
+    background-color: #d9d9d9; /* Cor preta, pode alterar conforme necessário */
+    border-radius: 100%; /* Para fazer o círculo */
+    margin: 0 auto;
+}
+input[type="button"], button{
+    background-color: #d9d9d9;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+input[type="button"]{
+    padding: 3%;
+}
+button{
+    padding: 3%
+}
+#gerenciar{
+    position: absolute;
+    top: 110px;
+    right: 40px;
+    padding: 5px;
+}
+#hamburguer{
+    display: none;
+}
+div#tabela-container{
+    display: flex;
+    width: 50%;
+    height: auto;
+    padding-top: 0.05px;
+    padding-left: 0;
+    padding-bottom: 20px;
+    background-color: white;
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-top: 40px;
+    overflow-x: auto;
+    border: 0.01px solid black
+}
+@media (max-width: 425px){
+    h1{
+        width: 150px;
+    }
+    p#descricao{
+        width: 150px;
+    }
+    #linhaDoCabecalho{
+        width: 80%;
+    }
+}
+@media (max-width: 352px){
+    .opcaoMenu{
+        font-size: 0.4em;
+    }
+    #opcoes{
+        margin-right: -40px;
+    }
+    h1{
+        font-size: 1.3em;
+        width: 110px !important;
+    }
+    #linhaDoCabecalho{
+        width: 76% !important;
+    }
+    main{
+        width: 50% !important;
+    }
+    p#descricao{
+        width: 110px;
+    }
+}
+@media(max-width: 768px){
+    table{
+        margin-top: 60px;
+    }
+    .bola{
+        transform: scale(0.7);
+    }
+    #botoes{
+        position: absolute;
+        top: 150px;
+        right: 10px;
+        transform: scale(0.8);
+    }
+    .opcaoMenu{
+        font-size: 0.5em !important;
+    }
+}
+@media(max-width: 643px){
+    table{
+        transform: scale(0.5);
+        transform-origin: top left;
+        margin-top: 0 !important;
+        margin-left: 0px !important;
+        margin: auto;
+
+    }
+    div#tabela-container{
+        width: 240px;
+        margin: auto;
+        margin-top: 30px;
+        overflow: hidden;
+    }
+    .bola{
+        transform: scale(0.7);
+    }
+    #botoes{
+        position: absolute;
+        top: 150px;
+        right: 10px;
+        transform: scale(0.7);
+    }
+    .opcaoMenu{
+        font-size: 0.4em !important;
+    }
+}
+@media(max-width: 425px){
+    table{
+        transform: scale(0.4);
+        margin-top: 10px !important;
+        margin-left: 7px !important;
+    }
+    table#estudantesTabela{
+        margin-top:-0px !important;
+    }
+    div#tabela-container{
+        width: 100px !important;
+        transform: scale(1.6);
+    }
+    .bola{
+        transform: scale(0.7);
+    }
+    #botoes{
+        position: absolute;
+        top: 190px;
+        right: 3px;
+        transform: scale(0.6);
+    }
+    .opcaoMenu{
+        font-size: 0.4em !important;
+    }
+    #menu-container{
+        transform: scale(0.9)
+    }
+    h1{
+        margin-left: 2px;
+    }
+    p#descricao{
+        margin-left: 2px;
+    }
+    #menu{
+        margin-left: -15px;
+    }
+}
+@media(max-width: 352px){
+    table{
+        transform: scale(0.37);
+        margin-top: 5px !important;
+        margin-left: 10px !important
+    }
+    #botoes{
+        margin-top: -10px !important;
+    }
+    #menu{
+        transform: scale(0.9);
+        margin-top: -25px;
+    }
+}
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+#modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+}
+#modal input{
+    display: block;
+    width: 93%;
+    margin: 10px 0;
+    padding: 10px;
+}
+#modal button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+#fechar {
+    background-color: #BEBEBE;
+    color: white;
+}
+@media (max-width: 348px){
+    #modal{
+        width: 80%;
+    }
+}
+#container-branco{
+    width: 96%;
+    display: flex;
+    height: 700px !important;
+    background-color: white;
+    padding-top: 10px;
+    border-radius: 10px;
+    padding-left: 0;
+    padding-bottom: 30px;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+#tabela-container{
+    width: 47% !important;
+    padding-right: 0;
+}
+h1{
+    font-size: 25.6px;
+    margin-left: 13px;
+}
+#calendario-container{
+    width: 100%;
+    margin-left: 20px;
+    margin-top: 40px;
+    background-color: white;
+    border-radius: 7px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5); /* Cria o efeito de sombra */
+    transition: box-shadow 0.3s ease;
+}
+#calendario-container>table{
+    border-collapse: collapse;
+    margin: auto;
+}
+#calendario-container th{
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 1);
+    font-weight: normal;
+}
+#calendario-container td{
+    background-color: white;
+    border-radius: 0%;
+    border: 1px solid rgba(0, 0, 0, 1);
+    position: relative;
+    width: 20px;
+    font-weight: bold;
+}
+h2#tituloMesAno{
+    text-align: center;
+}
+h3#tituloAgenda{
+    margin-left: 10px;
+}
+.itemAgenda{
+    border-radius: 5px;
+    display: block;
+    margin-bottom: 4px;
+    margin-left: 9px;
+}
+#turma-flex{
+    display: flex;
+    gap: 60px;
+}
+#horarioTurma{
+    background-color: white;
+    width: 45%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 7px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Cria o efeito de sombra */
+    transition: box-shadow 0.3s ease;
+}
+#horarioTurma>h3{
+    margin-top: 0;
+}
+#horarioTurma>p{
+    margin-top: -10px;
+}
+.time-container{
+    display: flex;
+    gap: 25px;
+    margin-left: 25px;
+    margin-top: -10px;
+    align-items: center;
+    width: 70px;
+}
+input.itemHorario{
+    margin-top: 10px;
+    margin-left: -26px;
+    background-color: rgba(162, 162, 162, 1);
+    border: none;
+    transform: scale(0.8);
+    background-color: #FF8744;
+}
+.horario-container{
+    background-color: #FF8744;
+    margin-bottom: 15px;
+    display: flex;
+    border-radius: 3px;
+}
+.horario-container>input{
+    background-color: #a2a2a2;
+    width: 100px;
+    margin-left: 5px;
+}
+.itemHorario::-webkit-calendar-picker-indicator {
+    display: none;
+  }
+
+  /* Para remover o spinner em campos numéricos também (se necessário) */
+  .itemHorario::-webkit-inner-spin-button {
+    display: none;
+  }
+  #flex-container{
+    background-color: white;
+  }
+  #comunicadosParaTurma{
+    margin-left: 20px;
+  }
+  #comunicadosTurma-container{
+    background-color: rgba(204, 201, 201, 1);
+    width: 100%;
+    height: 25%;
+    margin-left: 20px;
+  }
+  .marca{
+    background-color: rgba(255, 135, 68, 0.5);
+    width: 37px;
+    height: 37px;
+    position: absolute;
+    top: 10px;
+    left: 6px;
+    border-radius: 5px;
+    display: none;
+  }
+  @media(max-width: 917px){
+    #container-branco{
+        flex-direction: column;
+    }
+    .marca{
+        position: absolute
+    }
+    #calendario-container{
+        width: 90%;
+    }
+    #comunicadosTurma-container{
+        width: 80%;
+    }
+  }
+  @media(max-width: 691px){
+    #turma-flex{
+        flex-direction: column;
+        margin: auto;
+    }
+    #horarioTurma{
+        width: 50%;
+    }
+    #horarioTurma input{
+        width: 90%;
+    }
+  }
+  @media(max-width: 532px){
+    #calendario-container{
+        width: 70%;
+    }
+    #comunicadosTurma-container{
+        width: 60%;
+    }
+  }
+  @media(max-width: 436px){
+    #calendario-container{
+        width: 100%;
+    }
+    #horarioTurma{
+        width: 90% !important;
+    }
+    #comunicadosTurma-container{
+        width: 100%;
+    }
+    #comunicadosParaTurma{
+        font-size: 1em;
+    }
+    #container-branco{
+        transform-origin: top left;
+        transform: scale(0.6);
+        width: 95%;
+    }
+    .itemAgenda{
+        width: 50%;
+    }
+    .horario-container{
+        flex-direction: column;
+        gap: 5px;
+    }
+    #calendario-container  {
+        margin-left: 0;
+    }
+    #calendario-container>table  {
+        margin-left: -40px;
+    }
+}
+@media(max-width: 374px){
+    #gerenciar{
+        margin-top: 80px;
+    }
+    #container-branco{
+        margin-top: 40px;
+    }
+}
+@media(max-width: 320px){
+    #tabela-container{
+        width: 30% !important;
+    }
+}
+.agendaTurma input:nth-child(2) {
+    /* Estilos para a terceira div filha */
+    background-color: rgba(0, 84, 149, 1);
+}
+.agendaTurma input:nth-child(3) {
+    /* Estilos para a terceira div filha */
+    background-color: rgba(255, 135, 68, 1);
+}
+.agendaTurma input:nth-child(4) {
+    /* Estilos para a terceira div filha */
+    background-color: rgba(0, 84, 149, 0.5);
+}
+.agendaTurma input:nth-child(5) {
+    /* Estilos para a terceira div filha */
+    background-color: rgba(255, 135, 68, 0.5);
+}
+input.materia{
+    border: none;
+    color: white;
+    background-color: #FF8744;
+}
+input.materia::placeholder{
+    color: white;
+}
