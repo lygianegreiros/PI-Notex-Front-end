@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professores</title>
+    <link rel="stylesheet" type="text/css" href="../CSS/professores.css" media="screen" />
+</head>
+<body>
+<div id="container">
+    <div id="menu-container">
+        <img id="logo" src="../icons/Senac_logo.svg.png" alt="Logo do SENAC">
+        <br>
+        <div id="menu">
+            <div id="visaoGeral" class="itemMenu">
+                <a href="visaoGeral.html">
+                    <img id="casa" src="../icons/home-outline.svg" alt="Ícone de uma casa">
+                    <p class="opcaoMenu">Visão Geral</p>
+                </a>
+            </div>
+            <br>
+            <div id="estudantes" class="itemMenu">
+                <a href="estudantes.html">
+                    <img id="chapeu" src="../icons/school-outline.svg" alt="Ícone de um chapéu de formatura">
+                    <p class="opcaoMenu">Estudantes</p>
+                </a>
+            </div>
+            <br>
+            <div id="professores" class="itemMenu">
+                <img id="ribbon" src="../icons/ribbon-outline 1.png" alt="Ícone de um laço">
+                <p class="opcaoMenu">Professores</p>
+            </div>
+            <br>
+            <div id="turmas" class="itemMenu">
+                <a href="turmas.html">
+                    <img id="livro" src="../icons/book-outline.svg" alt="Ícone de um livro aberto">
+                    <p class="opcaoMenu">Turmas</p>
+                </a>
+            </div>
+            <br>
+            <div id="disciplinas" class="itemMenu">
+                <a href="disciplinas.html">
+                    <img id="biblioteca" src="../icons/library-outline.svg" alt="Ícone de uma biblioteca">
+                    <p class="opcaoMenu">Disciplinas</p>
+                </a>
+            </div>
+            <br>
+            <div id="calendario" class="itemMenu">
+                <a href="calendario.html">
+                    <img id="calendarioImg" src="../icons/calendar-number-outline.svg" alt="Ícone de um calendário">
+                    <p class="opcaoMenu">Calendário</p>
+                </a>
+            </div>
+            <br>
+            <div id="comunicados" class="itemMenu">
+                <a href="comunicados.html">
+                    <img id="carta" src="../icons/mail-unread-outline.svg" alt="Ícone de uma carta">
+                    <p class="opcaoMenu">Comunicados</p>
+                </a>
+            </div>
+            <br>
+            <div id="horario" class="itemMenu">
+                <a href="horario.html">
+                    <img id="quadroDeHorarios" src="../icons/calendar-outline.svg" alt="Ícone de um quadro de horários">
+                    <p class="opcaoMenu">Horário</p>
+                </a>
+            </div>
+            <hr id="linhaDoMenu" class="itemMenu">
+            <div id="configuracao">
+                <img id="engrenagem" src="../icons/settings-outline.svg" alt="Ícone de uma engrenagem">
+                <p class="opcaoMenu">Configuração</p>
+            </div>
+            <br>
+            <div id="sair" class="itemMenu">
+                <img id="portaDeSair" src="../icons/exit-outline.svg" alt="Ícone de uma porta aberta">
+                <p class="opcaoMenu">Sair</p>
+            </div>
+        </div>
+    </div>
+    <main>
+        <header>
+            <div id="input-container">
+                <input type="text" placeholder="Procurar..." id="pesquisa">
+            </div>
+            <div id="opcoes">
+                <div id="notificacoes-container">
+                    <img src="../icons/notifications-outline.svg" alt="Ícone de notificações" id="sino">
+                </div>
+                <div id="mensagem-container">
+                    <img src="../icons/chatbox-ellipses-outline.svg" alt="Ícone de chat" id="chat">
+                </div>
+                <a href="perfil.html">
+                    <div id="circulo"></div>
+                </a>
+                <div id="informacoes-de-perfil">
+                    <a href="perfil.html">
+                        <p>Leia O.</p>
+                        <p id="cinza">Admin</p>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <hr id="linhaDoCabecalho">
+        <h1>Lista de Professores</h1>
+        <p id="descricao">Lista de todos os professores.</p>
+        <div id="botoes">
+            <input type="button" value="Adicionar Professor" onclick="abrirModal()">
+            <input type="button" value="Gerenciar">
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th> </th>
+                    <th>Nome</th>
+                    <th>ID</th>
+                    <th>Disciplina(s)</th>
+                    <th>Turma(s)</th>
+                    <th>Telefone</th>
+                    <th>Endereço</th>
+                    <th>Gerenciar</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <div id="overlay1">
+            <div id="modalDeletar">
+            <h2>Deletar item</h2>
+            <p>Você tem certeza que deseja deletar esta lista?<br>Esta ação não pode ser revertida.</p>
+            <div class="modal-buttons">
+                <button id="cancelBtn" class="cancel-btn">Cancelar</button>
+                <button id="deleteBtn" class="delete-btn">Deletar</button>
+            </div>
+        </div>
+    </main>
+</div>
+
+<div id="overlay2">
+    <div id="modal">
+        <h2>Adicionar Professor</h2>
+        <input type="text" id="nome" placeholder="Nome">
+        <input type="text" id="disciplina" placeholder="Disciplina(s)">
+        <input type="text" id="turma" placeholder="Turma(s)">
+        <input type="text" id="telefone" placeholder="Telefone">
+        <input type="text" id="endereco" placeholder="Endereço">
+        <button onclick="salvarProfessor()">Salvar</button>
+        <button id="fechar" onclick="fecharModal()">Fechar</button>
+    </div>
+</div>
+
+<div id="overlay3" style="display: none;">
+    <div class="modalEditar">
+        <span onclick="fecharModalEdicao()" class="close">&times;</span>
+        <h2>Editar Estudante</h2>
+        <label for="nomeEdit">Nome:</label>
+        <input type="text" id="nomeEdit"><br>
+        <label for="turmaEdit">Turma:</label>
+        <input type="text" id="turmaEdit"><br>
+        <label for="telefoneEdit">Telefone:</label>
+        <input type="text" id="telefoneEdit"><br>
+        <label for="enderecoEdit">Endereço:</label>
+        <input type="text" id="enderecoEdit"><br>
+        <button onclick="salvarEdicao()">Salvar</button>
+    </div>
+</div>
+<script src="../JS/professores.js"></script>
+</body>
+</html>

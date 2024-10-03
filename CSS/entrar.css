@@ -1,0 +1,137 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 320px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.login-container input[type="email"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.login-container label {
+    font-size: 14px;
+    color: #555;
+}
+
+.login-container .options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.login-container .options label {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.login-container .options input {
+    margin-right: 5px;
+}
+
+.login-container .forgot-password {
+    font-size: 14px;
+    color: #555;
+}
+
+.login-container .forgot-password a {
+    text-decoration: none;
+    color: #555;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #FF6F3C;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.login-container button:hover {
+    background-color: #FF5A1F;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 18px;
+    color: #999;
+    cursor: pointer;
+}
+
+/* Estilos para sugestões de autocomplete */
+.autocomplete-suggestions {
+    border: 1px solid #ddd;
+    max-height: 150px;
+    overflow-y: auto;
+    position: absolute;
+    background-color: white;
+    z-index: 999;
+}
+
+.autocomplete-suggestion {
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.autocomplete-suggestion:hover {
+    background-color: #f0f0f0;
+}
+
+.remove-suggestion {
+    cursor: pointer;
+    color: #000000; /* Vermelho para o X */
+    margin-left: 10px;
+}
+
+/* Botão de esquecer senha */
+#forgetPasswordBtn {
+    display: none;
+    margin-top: 10px;
+    background-color: #d9534f;
+}
+
+#forgetPasswordBtn:hover {
+    background-color: #c9302c;
+}
+#sim{
+    color: #00549580
+}
+a{
+    text-decoration: none;
+}

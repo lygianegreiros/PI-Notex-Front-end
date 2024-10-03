@@ -1,0 +1,822 @@
+@font-face {
+    font-family: 'Nunito';
+    src: url('../fonts/Nunito-Medium.ttf') format('truetype');
+}
+body{
+    font-family: 'Nunito';
+}
+#espacoTurmas img{
+    width: 25px;
+    height: 25px;
+}
+#espacoTurmas{
+    margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(130px, 1fr));
+    gap: 30px;
+    transform-origin: top left;
+}
+img#logo {
+    width: 80px;
+    margin: 20px;
+}
+p.opcaoMenu{
+    margin-left: 10px;
+    font-family: 'Nunito';
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 0.7em;
+}
+a{
+    color: black;
+}
+#visaoGeral {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#casa {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+#estudantes {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+
+}
+#chapeu {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+#professores {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#ribbon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+#turmas {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+    background-color: #FF8744;
+}
+a{
+    text-decoration: none;
+}
+#livro {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+#disciplinas {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#biblioteca {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+#calendario {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#calendarioImg {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+#comunicados {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#carta {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+#horario {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#quadroDeHorarios {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+hr#linhaDoMenu{
+    width: 120px;
+    margin-left:0;
+    margin-top: 220px;
+}
+#configuracao {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#engrenagem {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+#sair {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#portaDeSair {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+input#pesquisa{
+    background-color: rgba(217, 217, 217, 0.35);
+    border: 0;
+    padding: 6px;
+    border-radius: 5px;
+    width: 250px;
+    margin-top: 10px;
+    margin-left: 30px !important;
+}
+#lupa{
+    transform: translate(-25px, 5px);
+    width: 17px;
+}
+#notificacoes-container{
+    background-color: #d9d9d9;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    margin-left: 600px;
+    position: relative
+}
+header{
+    display: flex;
+}
+#sino{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#mensagem-container{
+    background-color: #d9d9d9;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    margin-left: 10px;
+}
+#chat{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+}
+#circulo{
+    background-color: #d9d9d9;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+}
+#cinza{
+    color: rgba(0, 0, 0, 0.5);
+}
+#informacoes-de-perfil{
+    margin-left: 18px;
+    margin-top: -20px;
+}
+#cinza{
+    margin-top: -15px;
+}
+h1{
+    font-weight: normal;
+    margin-left: 30px;
+    margin-top: 0;
+    font-family: 'Nunito'
+}
+hr#linhaDoCabecalho{
+    margin-left: 10px;
+}
+p#descricao{
+    margin-left: 30px;
+    margin-top: -15px;
+    color: rgba(0, 0, 0, 0.6)
+}
+#container {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+main {
+    flex: 3;
+}
+#opcoes{
+    display: flex;
+    position: absolute;
+    top: 8px;
+    right: 50px;
+}
+@media (max-width: 1220px) {
+    #menu-container{
+        display: block;
+    }
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    table{
+        transform: scale(0.7)
+    }
+}
+@media (max-width: 1024px) {
+
+    #linhaDoCabecalho {
+        width: 98%;
+    }
+}
+@media (max-width: 770px) {
+    input#pesquisa{
+        margin-top: 40px !important;
+    }
+    #informacoes-de-perfil>p{
+        width: 50px
+    }
+}
+@media(max-width: 553px){
+    #logo {
+        width: 60px;
+        margin: 10px;
+    }
+    .opcaoMenu{
+        font-size: 0.5em
+    }
+    h1{
+        font-size: 1.6em;
+    }  
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    p#descricao{
+        font-size: 0.9em
+    }
+}
+@media(max-width: 516){
+    #linhaDoCabecalho{
+        width: 80%;
+    }
+}
+@media (max-width: 460px){
+    input#pesquisa{
+        width: 90px !important;
+    }
+    #linhaDoCabecalho{
+        width: 80% !important;
+    }
+}
+input#pesquisa{
+    background-image: url('../icons/search-outline.svg'); /* Caminho da imagem */
+    background-repeat: no-repeat;
+    background-position: right 10px center; /* Posição da imagem no final (à direita) */
+    background-size: 16px;
+}
+table{
+    border-collapse: collapse;
+    border-top: none;
+    margin-top: 30px;
+    margin-left: 15px;
+    width: 1050px;
+}
+
+tbody tr:first-child td:first-child {
+    border-top-left-radius: 10px;
+}
+
+tbody tr:first-child td:last-child {
+    border-top-right-radius: 10px;
+}
+
+tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+table, th, td{
+    border-left: none;
+    border-right: none;
+}
+td{
+    border-left: none; /* Borda esquerda */
+    border-right: none; /* Borda direita */
+    border-top: 1px solid #c4c4c4; /* Remove a borda superior */
+    border-bottom: 1px solid #c4c4c4; 
+}
+th{
+    background-color: #EAE6E6;
+    font-size: 15px;
+    width: 107px; 
+    height: 30px;            /* Define a largura horizontal da célula */
+    text-align: center;       /* Centraliza o texto horizontalmente */
+    vertical-align: middle;   /* Centraliza o texto verticalmente */
+    padding: 10px;
+    border-top: none;
+    border-bottom: none;
+}
+td{
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    text-align: center;
+    background-color: #f5f5f5;
+}
+.bola{
+    width: 30px !important;
+    height: 30px !important;
+    background-color: #d9d9d9; /* Cor preta, pode alterar conforme necessário */
+    border-radius: 100%; /* Para fazer o círculo */
+    margin: 0 auto;
+}
+input[type="button"], button{
+    background-color: #FF8744;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+    color: white;
+}
+input[type="button"]{
+    padding: 8px;
+}
+button{
+    padding: 3%
+}
+#botaoAdicionarTurma{
+    height: 30px;
+}
+#hamburguer{
+    display: none;
+
+}
+body{
+    overflow-x: hidden;
+}
+div#tabela-container{
+    width: 1080px;
+    padding-top: 0.05px;
+    padding-left: 0;
+    background-color: #EAE6E6;
+    border-radius: 10px;
+    margin-left: 30px;
+    margin-top: 40px;
+}
+@media (max-width: 425px){
+    h1{
+        width: 150px;
+    }
+    p#descricao{
+        width: 150px;
+    }
+    #linhaDoCabecalho{
+        width: 80%;
+    }
+}
+@media (max-width: 364px){
+    #botaoAdicionarTurma{
+        margin-top: 50px;
+    }
+}
+@media (max-width: 352px){
+    .opcaoMenu{
+        font-size: 0.4em;
+    }
+    #opcoes{
+        margin-right: -40px;
+    }
+    h1{
+        font-size: 1.3em;
+        width: 110px !important;
+    }
+    #linhaDoCabecalho{
+        width: 76% !important;
+    }
+    main{
+        width: 50% !important;
+    }
+    p#descricao{
+        width: 110px;
+    }
+    #espacoTurmas{
+        margin-left: -30px;
+    }
+}
+@media(max-width: 768px){
+    table{
+        transform: scale(0.7);
+        margin: -60px;
+    }
+    .bola{
+        transform: scale(0.7);
+    }
+    #botaoAdicionarTurma{
+        transform: scale(0.8);
+    }
+    .opcaoMenu{
+        font-size: 0.5em !important;
+    }
+}
+@media(max-width: 564px){
+    table{
+        transform: scale(0.5);
+        margin-top: -100px;
+        margin-left: -120px;
+    }
+    .bola{
+        transform: scale(0.7);
+    }
+    #botaoAdicionarTurma{
+        position: absolute;
+        top: 150px;
+        right: 10px;
+        transform: scale(0.7);
+    }
+    .opcaoMenu{
+        font-size: 0.4em !important;
+    }
+}
+@media(max-width: 425px){
+    table{
+        transform: scale(0.4);
+        margin-top: -140px;
+        margin-left: -180px;
+    }
+    .bola{
+        transform: scale(0.7);
+    }
+    #botaoAdicionarTurma{
+        position: absolute;
+        top: 190px;
+        right: 3px;
+        transform: scale(0.6);
+    }
+    .opcaoMenu{
+        font-size: 0.4em !important;
+    }
+    #menu-container{
+        transform: scale(0.9)
+    }
+    h1{
+        margin-left: 2px;
+    }
+    p#descricao{
+        margin-left: 2px;
+    }
+    #menu{
+        margin-left: -15px;
+    }
+}
+@media(max-width: 352px){
+    table{
+        transform: scale(0.37);
+        margin-left: -200px;
+    }
+    #botaoAdicionarTurma{
+        margin-top: 50px !important;
+    }
+    #menu{
+        transform: scale(0.9);
+        margin-top: -25px;
+    }
+}
+span{
+    color: rgba(122, 117, 117, 0.6)
+}
+select#anoSelect{
+    margin-left: 30px;
+    background-color: rgba(0, 84, 149, 0.5);
+    padding: 2px;
+    width: 60px;
+    border-radius: 5px;
+    border: none;
+    font-family: 'Nunito';
+    color: white
+}
+select#serie{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+}
+
+.close-btn {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #d3d3d3;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #a9a9a9;
+}
+#header, h1, hr#linhaDoCabecalho, select#anoSelect, p#descricao{
+    margin-left: 0px;
+}
+#espacoTurmas>div{
+    background-color: white;
+    width: 100%;
+    padding-left: 10px;
+    margin-top: 8px;
+    border-radius: 10px;
+    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.5); /* Cria o efeito de sombra */
+    transition: box-shadow 0.3s ease;
+}
+span{
+    font-weight: normal;
+    color: black
+}
+.acessarTurma{
+    width: 130px;
+    padding: 10px !important;
+    display: block;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 8px;
+}
+.horario-flex{
+    display: flex;
+}
+.horario-container{
+    display: flex;
+    margin-left: 40px;
+    height: 30px;
+    background-color: #BDBCBC;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;
+    margin-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 8px;
+}
+.horario-container>img{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+.horario-container>p{
+    color: white;
+}
+.idTurma{
+    margin-top: -20px;
+}
+.horario-flex{
+    margin-top: -15px;
+}
+.idTurma{
+    display: flex;
+    align-items: center;
+}
+.numeroEstudantes{
+    display: flex;
+    align-items: center;
+}
+@media(max-width: 996px){
+    .horario-flex{
+        flex-direction: column;
+    }
+    .horario-container{
+        margin-left: -3px;
+        width: 80px;
+    }
+}
+@media(max-width: 588px){
+    .conjuntoDeTurmas>div{
+        transform: scale(0.8);
+        width: 90%;
+    }
+}
+@media(max-width: 354px){
+    input{
+        margin-top: 22px !important;
+    }
+    .acessarTurma{
+        width: 120px;
+    }
+    .turmaDiv{
+        transform: scale(0.7) !important;
+        margin-left: -30px;
+        width: 180% !important;
+    }
+}
+.elipse{
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    cursor: pointer;
+}
+.turmaDiv{
+    position: relative;
+}
+.opcoesModal{
+    position: absolute;
+    display: none;
+    left: 86%;
+    top: 40px;
+    box-shadow: 0 0px 3px rgba(0, 0, 0, 0.3); /* Cria o efeito de sombra */
+    background-color: white;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+    padding-top: 5px;
+    height: auto;
+    z-index: 2;
+}
+.arquivar{
+    color: rgba(170, 91, 0, 1);
+    cursor: pointer;
+}
+.deletar{
+    color:rgba(209, 41, 61, 1);
+    cursor: pointer;
+}
+.x-simbolo{
+    display: block;
+    margin: auto;
+    width: 7px !important;  /* Novo tamanho desejado */
+    height: 7px !important;
+    cursor: pointer;
+}
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+}
+
+/* Estilo do modal */
+.modal {
+    display: none; /* Oculto por padrão */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 550px;
+    height: 200px;
+    margin: auto;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.cancel-btn {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+.delete-btn {
+    background-color: #d32f2f;
+    color: white;
+}
+
+.cancel-btn:hover, .delete-btn:hover {
+    opacity: 0.8;
+}
+@media (max-width: 804px){
+    #espacoTurmas h3{
+        width: 80px
+    }
+}
+@media (max-width: 662px){
+    #espacoTurmas{
+        transform: scale(0.8);
+    }
+}
+@media (max-width: 539px){
+    #espacoTurmas{
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    }
+}
+.turmaDiv[data-serie^="1º Ano"] .acessarTurma,
+.turmaDiv[data-serie^="1º Ano"] .horario-container {
+    background-color: rgba(0, 84, 149, 0.5);
+}
+
+/* Estilos para 2º ano */
+.turmaDiv[data-serie^="2º Ano"] .acessarTurma,
+.turmaDiv[data-serie^="2º Ano"] .horario-container {
+    background-color: rgba(0, 84, 149, 1);
+}
+
+/* Estilos para 3º ano */
+.turmaDiv[data-serie^="3º Ano"] .acessarTurma,
+.turmaDiv[data-serie^="3º Ano"] .horario-container {
+    background-color: #FF8744;
+}
+#topo-flex{
+    display: flex;
+    gap: 30px;
+    position: absolute;
+    right: 20px;
+}
+.pagination>button{
+    background-color: white;
+    padding: 7px;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+}
