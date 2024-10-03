@@ -123,10 +123,19 @@
             <tbody>
             </tbody>
         </table>
+        <div id="overlay1">
+            <div id="modalDeletar">
+            <h2>Deletar item</h2>
+            <p>Você tem certeza que deseja deletar esta lista?<br>Esta ação não pode ser revertida.</p>
+            <div class="modal-buttons">
+                <button id="cancelBtn" class="cancel-btn">Cancelar</button>
+                <button id="deleteBtn" class="delete-btn">Deletar</button>
+            </div>
+        </div>
     </main>
 </div>
 
-<div id="overlay">
+<div id="overlay2">
     <div id="modal">
         <h2>Adicionar Professor</h2>
         <input type="text" id="nome" placeholder="Nome">
@@ -136,6 +145,22 @@
         <input type="text" id="endereco" placeholder="Endereço">
         <button onclick="salvarProfessor()">Salvar</button>
         <button id="fechar" onclick="fecharModal()">Fechar</button>
+    </div>
+</div>
+
+<div id="overlay3" style="display: none;">
+    <div class="modalEditar">
+        <span onclick="fecharModalEdicao()" class="close">&times;</span>
+        <h2>Editar Estudante</h2>
+        <label for="nomeEdit">Nome:</label>
+        <input type="text" id="nomeEdit"><br>
+        <label for="turmaEdit">Turma:</label>
+        <input type="text" id="turmaEdit"><br>
+        <label for="telefoneEdit">Telefone:</label>
+        <input type="text" id="telefoneEdit"><br>
+        <label for="enderecoEdit">Endereço:</label>
+        <input type="text" id="enderecoEdit"><br>
+        <button onclick="salvarEdicao()">Salvar</button>
     </div>
 </div>
 <script src="../JS/professores.js"></script>

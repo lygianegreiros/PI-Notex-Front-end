@@ -1,5 +1,5 @@
 let dataAtual = new Date();
-var dataSelecionada=new Date();
+var dataSelecionada = new Date();
 const agendaContainer = document.getElementById('agenda-container');
 const setaEsquerda = document.getElementById('setaEsquerda');
 const setaDireita = document.getElementById('setaDireita');
@@ -8,6 +8,7 @@ const diasContainer = document.getElementById('dias');
 const calendarioSemana = document.getElementById('calendarioSemana');
 const diaDoMes = document.getElementById('diaDoMes');
 var anotacoes = agendaContainer.querySelectorAll('.anotacao');
+var semana;
 
 let eventosPorMes = {};
 let eventosPorSemana = {};
@@ -17,7 +18,7 @@ let eventosPorDia = {};
 function atualizarCalendario() {
     var inputs = document.querySelectorAll('input[type="number"]');
     inputs.forEach(input => {
-        input.addEventListener('input', function() {
+        input.addEventListener('input', function () {
             validateDayInput(input);
         });
     });
@@ -68,119 +69,172 @@ function atualizarDias() {
 function carregarEventos() {
     agendaContainer.innerHTML = '<h2>Agenda</h2>'; // Limpa a agenda anterior
     var chaveMes = `${dataSelecionada.getMonth() + 1}-${dataSelecionada.getFullYear()}`;
+    console.log(chaveMes);
+    console.log(eventosPorMes);
     var eventosMes = eventosPorMes[chaveMes] || [];
-
+    console.log(eventosMes);
     var chaveDia = `${dataSelecionada.getDate()}-${dataSelecionada.getMonth() + 1}-${dataSelecionada.getFullYear()}`;
     var eventosDia = eventosPorDia[chaveDia] || [];
-    console.log(eventosDia);
-
+    console.log(eventosPorSemana);
+    console.log(semana);
+    console.log(eventosPorDia);
+    var eventosSemana = eventosPorSemana[`${semana}, ${dataSelecionada.getFullYear()}`] || [];
+    console.log(eventosSemana);
     // Inicializa 3 campos fixos de anotação
     for (let i = 0; i < 4; i++) {
-        if(document.getElementById('buttonMes').classList.contains('active')){
+        if (document.getElementById('buttonMes').classList.contains('active')) {
             var evento = eventosMes[i] || { dia: '', texto: '' };
-            console.log(evento);
         }
-        else if(document.getElementById('buttonDia').classList.contains('active')){
+        else if (document.getElementById('buttonDia').classList.contains('active')) {
             var evento = eventosDia[i] || { dia: '', texto: '' };
         }
+        else if (document.getElementById('buttonSemana').classList.contains('active')) {
+            var evento = eventosSemana[i] || { dia: '', texto: '' };
+        }
+        console.log(evento);
         var anotacao = document.createElement('div');
         anotacao.classList.add('anotacao');
-        if(document.querySelector('.view-option:nth-child(3)').classList.contains('active')){
+        if (document.querySelector('.view-option:nth-child(3)').classList.contains('active')) {
             anotacao.innerHTML = `
             <textarea placeholder="Evento">${evento.texto}</textarea>
         `;
-        }else{
+        } else {
             anotacao.innerHTML = `
                 <input type="number" placeholder="Dia" value="${evento.dia}">
                 <textarea placeholder="Evento">${evento.texto}</textarea>
             `;
         }
         agendaContainer.appendChild(anotacao);
+        console.log(eventosPorDia);
     }
 }
-var eventos = [];
+
+// Salva os eventos do mês atual na memória temporária
+function removerDuplicados(array) {
+    const eventosUnicos = [];
+    const chavesUnicas = new Set(); // Usado para verificar duplicatas
+
+    array.forEach(evento => {
+        const chave = `${evento.dia}-${evento.texto}`; // Chave única para cada evento
+        if (!chavesUnicas.has(chave)) {
+            chavesUnicas.add(chave);
+            eventosUnicos.push(evento);
+        }
+    });
+
+    return eventosUnicos;
+}
+
 // Salva os eventos do mês atual na memória temporária
 function salvarEventos() {
     console.log(eventosPorDia);
     var anotacoes = agendaContainer.querySelectorAll('.anotacao');
-    let eventos = []; // Reinicializar o array de eventos
+    let eventos = []; // Reinicializar o array de evento
+    indice = 0;
+
     anotacoes.forEach((anotacao, indice) => {
         console.log(indice);
+        let dia;
+
+        // Determina o dia com base no botão ativo
         if (document.getElementById('buttonDia').classList.contains('active')) {
-            var dia = dataSelecionada.getDate();
-        } else{
+            dia = dataSelecionada.getDate();
+        } else {
             var inputElement = anotacao.querySelector('input');
             if (inputElement) {
-                var dia = inputElement.value;
+                dia = inputElement.value;
             } else {
                 console.log('Elemento input não encontrado na anotação');
-                var dia = ''; // Definir dia como vazio ou outra lógica
+                dia = ''; // Definir dia como vazio
             }
         }
-        
+
         var texto = anotacao.querySelector('textarea').value;
         console.log(texto);
+
+        // Limpar campos se ambos dia e texto estiverem vazios
+        if (!dia && !texto) {
+            if (inputElement) inputElement.value = ''; // Limpa o input de dia
+            anotacao.querySelector('textarea').value = ''; // Limpa o textarea
+            return; // Sair da iteração
+        }
+
+        // Se o dia ou texto forem modificados, atualizar o dicionário
+        var mesSelecionado = dataSelecionada.getMonth() + 1; // Mês selecionado (1 a 12)
+        var anoSelecionado = dataSelecionada.getFullYear();
+        var chaveDiaAntiga = `${anotacao.dataset.dia}-${mesSelecionado}-${anoSelecionado}`; // Armazenar o dia antigo
+        var chaveDiaNova = `${dia}-${mesSelecionado}-${anoSelecionado}`; // Nova chave com o dia atualizado
+
+        if (chaveDiaAntiga !== chaveDiaNova) {
+            // Remover o evento da chave antiga se existir
+            if (eventosPorDia[chaveDiaAntiga]) {
+                eventosPorDia[chaveDiaAntiga] = eventosPorDia[chaveDiaAntiga].filter((_, idx) => idx !== indice);
+                if (eventosPorDia[chaveDiaAntiga].length === 0) {
+                    delete eventosPorDia[chaveDiaAntiga];
+                }
+            }
+        }
+
+        // Atualizar o texto e o dia na nova chave
+        if (!eventosPorDia[chaveDiaNova]) {
+            eventosPorDia[chaveDiaNova] = [];
+        }
+
+        // Atualizar ou adicionar o evento
         if (dia && texto) {
-            console.log("c");
-            // Verifica se o dia corresponde ao mês selecionado
-            var mesSelecionado = dataSelecionada.getMonth() + 1; // Mês selecionado (1 a 12)
-            var anoSelecionado = dataSelecionada.getFullYear();
-            var chaveMes = `${mesSelecionado}-${anoSelecionado}`;
-            var chaveDia = `${dia}-${mesSelecionado}-${anoSelecionado}`;
-            // Verifica se o evento (dia e texto) já existe no mês
-            console.log(eventosPorMes);
-            let eventoExisteMes = eventosPorMes[chaveMes]?.some(evento => evento.dia === dia && evento.texto === texto);
-            if (!eventoExisteMes) {
-                // Se o evento não existe, adiciona aos arrays eventos e eventosPorDia
-                eventos.push({ dia, texto });
+            eventosPorDia[chaveDiaNova][indice] = { dia, texto };
+        }
 
-                if (!eventosPorMes[chaveMes]) {
-                    eventosPorMes[chaveMes] = [];
-                }
-    
-                // Inicializa o array para o dia, caso não exista
-                if (!eventosPorDia[chaveDia]) {
-                    eventosPorDia[chaveDia] = [];
-                }
+        // Remover duplicados em eventosPorDia antes de salvar
+        eventosPorDia[chaveDiaNova] = removerDuplicados(eventosPorDia[chaveDiaNova]);
 
-                eventosPorDia[chaveDia][indice] = { dia, texto };
-                let b=0;
-                console.log(eventosPorDia);
-                for (let data in eventosPorDia) {
-                    // Separar a data para obter o mês e o ano
-                    let [dia, mes, ano] = data.split('-');
-                    let chave = `${mes}-${ano}`; // Criar a chave "mês-ano"
-                
-                    // Se a chave ainda não existir, inicializar com um array vazio
-                    if (!eventosPorMes[chave]) {
-                        eventosPorMes[chave] = [];
-                    }
-                
-                    // Adicionar os objetos ao array correspondente
-                    eventosPorMes[chave][b]=(eventosPorDia[data][0]);
-                    b=b+1;
+        // Atualizar o dataset do elemento para refletir o novo dia
+        anotacao.dataset.dia = dia;
+
+        // Atualizar eventosPorMes e eventosPorSemana
+        let c1 = 0;
+        for (let data of Object.keys(eventosPorDia)) {
+            let [dia, mes, ano] = data.split('-');
+            let chave = `${mes}-${ano}`;
+
+            if (!eventosPorMes[chave]) {
+                eventosPorMes[chave] = [];
+            }
+
+            for (let c3 = 0; c3 < 4; c3++) {
+                if (eventosPorDia[data][c3]) {
+                    eventosPorMes[chave][c1] = eventosPorDia[data][c3];
+                    c1++;
+                }
+            }
+        }
+
+        c1 = 0;
+        for (let data of Object.keys(eventosPorDia)) {
+            let [dia, mes, ano] = data.split('-');
+            mes = parseInt(mes) - 1;
+            var primeiroDiaAno2 = new Date(ano, 0, 1);
+            var diasDesdePrimeiroDiaAno2 = Math.floor((new Date(ano, mes, dia) - primeiroDiaAno2) / (24 * 60 * 60 * 1000));
+            var chaveSemana = `${Math.ceil((diasDesdePrimeiroDiaAno2 + (primeiroDiaAno2.getDay() || 7)) / 7)}, ${ano}`;
+
+            if (!eventosPorSemana[chaveSemana]) {
+                eventosPorSemana[chaveSemana] = [];
+            }
+
+            for (let c3 = 0; c3 < 4; c3++) {
+                if (eventosPorDia[data][c3]) {
+                    eventosPorSemana[chaveSemana][c1] = eventosPorDia[data][c3];
+                    c1++;
                 }
             }
         }
     });
-    const resultado = {};
 
-    for (const data in eventosPorDia) {
-        const textos = eventosPorDia[data].map(item => item.texto);
-        const textosUnicos = [...new Set(textos)]; // Remove duplicados
-
-        resultado[data] = textosUnicos
-            .filter(texto => texto !== undefined) // Remove entradas com valor 'undefined'
-            .map(texto => ({ dia: eventosPorDia[data][0].dia, texto }));
-    }
-
-    eventosPorDia=resultado;    
     console.log(eventos);
-
     console.log(eventosPorDia);
     console.log(eventosPorMes);
+    console.log(eventosPorSemana);
 }
-
 
 
 // Muda o mês e atualiza o calendário
@@ -205,14 +259,14 @@ function atualizarSemana() {
     }
     var primeiroDiaAno = new Date(dataAtual.getFullYear(), 0, 1);
     var diasDesdePrimeiroDiaAno = Math.floor((dataAtual - primeiroDiaAno) / (24 * 60 * 60 * 1000));
-    var semana = Math.ceil((diasDesdePrimeiroDiaAno + (primeiroDiaAno.getDay() || 7)) / 7);
+    semana = Math.ceil((diasDesdePrimeiroDiaAno + (primeiroDiaAno.getDay() || 7)) / 7);
     mesAno.textContent = `Semana ${semana}, ${dataAtual.getFullYear()}`;
-    console.log(chavesMes.getMonth(), dataAtual.getMonth());
 }
 
 function navegarSemana(delta) {
     dataAtual.setDate(dataAtual.getDate() + (delta * 7));
     atualizarSemana();
+    carregarEventos();
 }
 
 // Atualiza a visualização do dia
@@ -227,14 +281,14 @@ function atualizarDia() {
     const diasDaSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
     // Obtém o nome do dia da semana correspondente
     const nomeDoDia = diasDaSemana[diaDaSemana];
-    document.getElementById('dias-semana').innerHTML=`<div> ${nomeDoDia}</div>`;
+    document.getElementById('dias-semana').innerHTML = `<div> ${nomeDoDia}</div>`;
     diaDoMes.style.display = 'block'; // Garante que o dia atual seja exibido
-    dataSelecionada=dataAtual;
+    dataSelecionada = dataAtual;
     mesAno.textContent = dataAtual.toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' });
 }
 
 // Configura os botões de navegação
-setaEsquerda.addEventListener('click', function() {
+setaEsquerda.addEventListener('click', function () {
     if (document.querySelector('.view-option:nth-child(2)').classList.contains('active')) {
         navegarSemana(-1); // Semana anterior
     } else if (document.querySelector('.view-option:nth-child(3)').classList.contains('active')) {
@@ -250,7 +304,7 @@ setaEsquerda.addEventListener('click', function() {
     }
 });
 
-setaDireita.addEventListener('click', function() {
+setaDireita.addEventListener('click', function () {
     if (document.querySelector('.view-option:nth-child(2)').classList.contains('active')) {
         navegarSemana(1); // Próxima semana
     } else if (document.querySelector('.view-option:nth-child(3)').classList.contains('active')) {
@@ -285,17 +339,19 @@ function showWeekView() {
     diasContainer.style.display = 'none'; // Limpa dias antigos
     diaDoMes.style.display = "none";
     calendarioSemana.style.display = 'flex';
-    document.getElementById('dias-semana').innerHTML=`<div>Dom</div> <div>Seg</div> <div>Ter</div> <div>Qua</div> <div>Qui</div> <div>Sex</div>  <div>Sáb</div>`
+    document.getElementById('dias-semana').innerHTML = `<div>Dom</div> <div>Seg</div> <div>Ter</div> <div>Qua</div> <div>Qui</div> <div>Sex</div>  <div>Sáb</div>`
     atualizarSemana();
+    carregarEventos();
 }
 
 function showMonthView() {
+    salvarEventos();
     calendarioSemana.style.display = 'none';
     diaDoMes.style.display = "none";
     document.querySelector('.active').classList.remove('active');
     mesAno.textContent = dataAtual.toLocaleDateString('pt-BR', { month: 'long', year: 'numeric' });
     document.querySelector('.view-option:nth-child(1)').classList.add('active');
-    document.getElementById('dias-semana').innerHTML=`<div>Dom</div> <div>Seg</div> <div>Ter</div> <div>Qua</div> <div>Qui</div> <div>Sex</div>  <div>Sáb</div>`
+    document.getElementById('dias-semana').innerHTML = `<div>Dom</div> <div>Seg</div> <div>Ter</div> <div>Qua</div> <div>Qui</div> <div>Sex</div>  <div>Sáb</div>`
     diasContainer.style.display = 'flex';
     carregarEventos();
 }
@@ -344,10 +400,10 @@ function validateDayInput(input) {
     }
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     var inputs = document.querySelectorAll('input[type="number"]');
     inputs.forEach(input => {
-        input.addEventListener('input', function() {
+        input.addEventListener('input', function () {
             validateDayInput(input);
         });
     });

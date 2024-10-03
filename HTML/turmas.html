@@ -103,7 +103,14 @@
         <hr id="linhaDoCabecalho">
         <h1>Listas de turmas</h1>
         <p id="descricao">Lista de todas as turmas. <span>- você pode filtrar por turmas</span> </p>
-        <input type="button" value="Adicionar Turma" onclick="openOverlay()" id="botaoAdicionarTurma">
+        <div id="topo-flex">
+            <div class="pagination">
+                <button id="prevPage" onclick="prevPage()">←</button>
+                <span id="currentPage">1</span>
+                <button id="nextPage" onclick="nextPage()">→</button>
+            </div>
+            <input type="button" value="Adicionar Turma" onclick="openOverlay()" id="botaoAdicionarTurma">
+        </div>
         <select name="anoSelect" id="anoSelect">
             <option value="anoOption" hidden selected>Ano</option>
         </select>

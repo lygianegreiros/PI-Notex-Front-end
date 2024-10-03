@@ -11,6 +11,10 @@ body{
 }
 #espacoTurmas{
     margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(130px, 1fr));
+    gap: 30px;
+    transform-origin: top left;
 }
 img#logo {
     width: 80px;
@@ -395,10 +399,7 @@ button{
     padding: 3%
 }
 #botaoAdicionarTurma{
-    position: absolute;
-    top: 125px;
-    right: 40px;
-    display: flex;
+    height: 30px;
 }
 #hamburguer{
     display: none;
@@ -452,6 +453,9 @@ div#tabela-container{
     p#descricao{
         width: 110px;
     }
+    #espacoTurmas{
+        margin-left: -30px;
+    }
 }
 @media(max-width: 768px){
     table{
@@ -462,9 +466,6 @@ div#tabela-container{
         transform: scale(0.7);
     }
     #botaoAdicionarTurma{
-        position: absolute;
-        top: 150px;
-        right: 10px;
         transform: scale(0.8);
     }
     .opcaoMenu{
@@ -598,24 +599,17 @@ button {
 button:hover {
     background-color: #a9a9a9;
 }
-.conjuntoDeTurmas{
-    display: flex;
-    flex-wrap: wrap;
-}
 #header, h1, hr#linhaDoCabecalho, select#anoSelect, p#descricao{
     margin-left: 0px;
 }
-.conjuntoDeTurmas>div{
+#espacoTurmas>div{
     background-color: white;
-    width: 30%;
+    width: 100%;
     padding-left: 10px;
     margin-top: 8px;
     border-radius: 10px;
     box-shadow: 0 0px 4px rgba(0, 0, 0, 0.5); /* Cria o efeito de sombra */
     transition: box-shadow 0.3s ease;
-}
-.conjuntoDeTurmas{
-    gap: 10px;
 }
 span{
     font-weight: normal;
@@ -706,7 +700,7 @@ span{
 .opcoesModal{
     position: absolute;
     display: none;
-    left: 270px;
+    left: 86%;
     top: 40px;
     box-shadow: 0 0px 3px rgba(0, 0, 0, 0.3); /* Cria o efeito de sombra */
     background-color: white;
@@ -728,8 +722,8 @@ span{
 .x-simbolo{
     display: block;
     margin: auto;
-    width: 15px !important;  /* Novo tamanho desejado */
-    height: 15px !important;
+    width: 7px !important;  /* Novo tamanho desejado */
+    height: 7px !important;
     cursor: pointer;
 }
 button {
@@ -784,4 +778,45 @@ button {
 .cancel-btn:hover, .delete-btn:hover {
     opacity: 0.8;
 }
+@media (max-width: 804px){
+    #espacoTurmas h3{
+        width: 80px
+    }
+}
+@media (max-width: 662px){
+    #espacoTurmas{
+        transform: scale(0.8);
+    }
+}
+@media (max-width: 539px){
+    #espacoTurmas{
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    }
+}
+.turmaDiv[data-serie^="1º Ano"] .acessarTurma,
+.turmaDiv[data-serie^="1º Ano"] .horario-container {
+    background-color: rgba(0, 84, 149, 0.5);
+}
 
+/* Estilos para 2º ano */
+.turmaDiv[data-serie^="2º Ano"] .acessarTurma,
+.turmaDiv[data-serie^="2º Ano"] .horario-container {
+    background-color: rgba(0, 84, 149, 1);
+}
+
+/* Estilos para 3º ano */
+.turmaDiv[data-serie^="3º Ano"] .acessarTurma,
+.turmaDiv[data-serie^="3º Ano"] .horario-container {
+    background-color: #FF8744;
+}
+#topo-flex{
+    display: flex;
+    gap: 30px;
+    position: absolute;
+    right: 20px;
+}
+.pagination>button{
+    background-color: white;
+    padding: 7px;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+}

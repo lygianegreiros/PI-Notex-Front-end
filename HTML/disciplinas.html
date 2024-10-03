@@ -118,6 +118,15 @@
             <tbody>
             </tbody>
         </table>
+        <div id="overlay1">
+            <div id="modalDeletar">
+            <h2>Deletar item</h2>
+            <p>Você tem certeza que deseja deletar esta lista?<br>Esta ação não pode ser revertida.</p>
+            <div class="modal-buttons">
+                <button id="cancelBtn" class="cancel-btn">Cancelar</button>
+                <button id="deleteBtn" class="delete-btn">Deletar</button>
+            </div>
+        </div>
     </main>
 </div>
 <div id="overlay">
@@ -129,6 +138,21 @@
         <input type="text" id="professor" placeholder="Professor">
         <button onclick="salvarDisciplina()">Salvar</button>
         <button id="fechar" onclick="fecharModal()">Fechar</button>
+    </div>
+</div>
+<div id="overlay3" style="display: none;">
+    <div class="modalEditar">
+        <span onclick="fecharModalEdicao()" class="close">&times;</span>
+        <h2>Editar Disciplina</h2>
+        <label for="nomeEdit">Nome:</label>
+        <input type="text" id="nomeEdit"><br>
+        <label for="turmaEdit">Turma:</label>
+        <input type="text" id="turmaEdit"><br>
+        <label for="chEdit">Carga Horária:</label>
+        <input type="number" id="chEdit"><br>
+        <label for="professorEdit">Professor:</label>
+        <input type="text" id="professorEdit"><br>
+        <button onclick="salvarEdicao()">Salvar</button>
     </div>
 </div>
 <script src="../JS/disciplinas.js"></script>

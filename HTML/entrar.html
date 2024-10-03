@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login com Autocomplete e Esquecer Senha</title>
+    <link rel="stylesheet" type="text/css" href="../CSS/entrar.css" media="screen" />
+</head>
+<body>
+    <div class="login-container">
+        <div class="close">&times;</div>
+        <h2>Fazer login</h2>
+        <form id="loginForm">
+            <label for="email">E-mail</label>
+            <div style="position: relative;">
+                <input type="email" id="email" name="email" placeholder="E-mail" autocomplete="off" required>
+                <div id="autocomplete-email-list" class="autocomplete-suggestions"></div>
+            </div>
+            
+            <label for="password">Senha</label>
+            <div style="position: relative;">
+                <input type="password" id="password" name="password" placeholder="Senha" autocomplete="off" required>
+                <div id="autocomplete-password-list" class="autocomplete-suggestions"></div>
+            </div>
+            
+            <div class="options">
+                <label><input type="checkbox" id="remember" name="remember"> Lembrar</label>
+                <div class="forgot-password"><a href="#">Esqueceu a senha?</a></div>
+            </div>
+
+            <button type="submit">Entrar</button>
+            <button type="button" id="forgetPasswordBtn">Esquecer senha</button>
+        </form>
+        <p>Quer cadastrar um professor? <a href="cadastrar.html"><span id="sim">Sim.</span></a></p>
+    </div>
+
+    <script src="../JS/entrar.js">
+    </script>
+
+</body>
+</html>

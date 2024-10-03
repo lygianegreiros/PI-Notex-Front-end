@@ -574,6 +574,8 @@ button{
     top: 100px;
     right: 40px;
     display: flex;
+    background-color: #FF8744;
+    color: white;
 }
 .comunicado-flex{
     display: flex;

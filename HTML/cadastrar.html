@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Professor</title>
+    <link rel="stylesheet" href="../CSS/cadastrar.css">
+</head>
+<body>
+    <!-- Modal de Cadastro de Professor -->
+    <div class="modal" id="cadastro-modal">
+        <h1>Cadastrar Professor</h1>
+        <div class="profile-picture">
+            <img id="profile-img" src="https://via.placeholder.com/80" alt="Foto do Professor">
+            <span class="edit-icon">&#9998;</span>
+            <input type="file" id="image-input" accept="image/*" style="display: none;">
+        </div>
+        <form id="cadastro-form">
+            <label for="name">Nome</label>
+            <input type="text" id="name" placeholder="your name">
+
+            <label for="email">Endereço de e-mail</label>
+            <input type="email" id="email" placeholder="yourname@gmail.com">
+
+            <label for="phone">Telefone</label>
+            <input type="tel" id="phone" placeholder="Add number">
+
+            <label for="address">Endereço</label>
+            <input type="text" id="address" placeholder="">
+
+            <label for="class">Turma(s)</label>
+            <input type="text" id="class" pattern="^(MT\d{3})(,\s*MT\d{3})*$" title="Formato: MT001,MT002,...,MTn" required>
+
+            <label for="subjects">Disciplinas</label>
+            <input type="text" id="subjects" placeholder="">
+
+            <button type="submit" class="submit-btn">Cadastrar</button>
+        </form>
+        <p>Quer fazer login? <a href="entrar.html"><span id="sim">Sim.</span></a></p>
+    </div>
+
+    <!-- Modal de Permissões -->
+    <div class="modal" id="permissoes-modal" style="display: none;">
+        <form id="permissoes-form">
+        <h1 class="center">Configurar permissões</h1>
+        <p class="center">Configure as permissões deste usuário</p>
+      
+        <div class="permission-item">
+          <span>Criar usuários</span>
+          <label class="switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+          </label>
+        </div>
+      
+        <div class="permission-item">
+          <span>Visualizar</span>
+          <label class="switch">
+            <input type="checkbox" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+      
+        <div class="permission-item">
+          <span>Editar informações</span>
+          <label class="switch">
+            <input type="checkbox" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+      
+        <button class="submit-btn">Pronto</button>
+        </form>
+    </div>
+
+    <script src="../JS/cadastrar.js"></script>
+</body>
+</html>
