@@ -1,0 +1,520 @@
+@font-face {
+    font-family: 'Nunito';
+    src: url('../fonts/Nunito-Medium.ttf') format('truetype');
+}
+body{
+    font-family: 'Nunito';
+}
+img#logo {
+    width: 80px;
+    margin: 20px;
+}
+a{
+    text-decoration: none;
+}
+p.opcaoMenu{
+    margin-left: 10px;
+    font-family: 'Nunito';
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 0.7em;
+}
+a{
+    color: black;
+}
+#visaoGeral {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#casa {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+#estudantes {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#chapeu {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+#professores {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#ribbon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+#turmas {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#livro {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+#disciplinas {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#biblioteca {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+#calendario {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#calendarioImg {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+#comunicados {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#carta {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+#horario {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid #894E9A;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#quadroDeHorarios {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+hr#linhaDoMenu{
+    width: 120px;
+    margin-left:0;
+    margin-top: 220px;
+}
+#configuracao {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#engrenagem {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+#sair {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 30px;
+    margin-bottom: -4px;
+}
+#portaDeSair {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+input#pesquisa{
+    background-color: rgba(217, 217, 217, 0.35);
+    border: 0;
+    padding: 6px;
+    border-radius: 5px;
+    width: 250px;
+    margin-top: 10px;
+    margin-left: 30px !important;
+}
+#notificacoes-container{
+    background-color: #d9d9d9;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    margin-left: 600px;
+    position: relative
+}
+header{
+    display: flex;
+}
+#sino{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#mensagem-container{
+    background-color: #d9d9d9;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    margin-left: 10px;
+}
+#chat{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+}
+#circulo{
+    background-color: #d9d9d9;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+}
+#cinza{
+    color: rgba(0, 0, 0, 0.5);
+}
+#informacoes-de-perfil{
+    margin-left: 18px;
+    margin-top: -20px;
+}
+#cinza{
+    margin-top: -15px;
+}
+h1{
+    font-weight: normal;
+    margin-left: 30px;
+    margin-top: 0;
+    font-family: 'Nunito'
+}
+hr#linhaDoCabecalho{
+    margin-left: 10px;
+}
+p#descricao{
+    margin-left: 30px;
+    margin-top: -15px;
+    color: rgba(0, 0, 0, 0.6)
+}
+#container {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+main {
+    flex: 3;
+}
+#opcoes{
+    display: flex;
+    position: absolute;
+    top: 8px;
+    right: 50px;
+}
+@media (max-width: 1220px) {
+    #menu-container{
+        display: block;
+    }
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    table{
+        transform: scale(0.7);
+        position: absolute;
+        left: -20px !important;
+        top: 140px;
+    }
+}
+@media (max-width: 1024px) {
+
+    #linhaDoCabecalho {
+        width: 98%;
+    }
+}
+@media (max-width: 770px) {
+    #informacoes-de-perfil>p{
+        width: 50px
+    }
+    table{
+        top: 160px;
+    }
+}
+@media(max-width: 895px){
+    table{
+        transform: scale(0.6);
+        margin-left: -40px !important;
+        margin-top: 0px !important;
+    }
+    #menu{
+        transform: scale(0.8);
+        margin-left: -20px;
+        margin-top: -70px;
+    }
+    main{
+        margin-left: -20px;
+    }
+}
+@media(max-width: 553px){
+    #logo {
+        width: 60px;
+        margin: 10px;
+    }
+    .opcaoMenu{
+        font-size: 0.5em
+    }
+    h1{
+        font-size: 1.6em;
+    }  
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    p#descricao{
+        font-size: 0.9em
+    }
+}
+@media(max-width: 516px){
+    #linhaDoCabecalho{
+        width: 80%;
+    }
+}
+@media (max-width: 460px){
+    input#pesquisa{
+        width: 90px !important;
+    }
+    #linhaDoCabecalho{
+        width: 80% !important;
+    }
+}
+input#pesquisa{
+    background-image: url('../icons/search-outline.svg'); /* Caminho da imagem */
+    background-repeat: no-repeat;
+    background-position: right 10px center; /* Posição da imagem no final (à direita) */
+    background-size: 16px;
+}
+table{
+    margin-top: 10px;
+    margin-left: 40px;
+    width: 1000px;
+    overflow: hidden;
+    border-radius: 7px !important;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 0.5px solid #000;
+    
+}
+th{
+    background-color: #EEECEC;
+    font-size: 15px;
+    width: 107px; 
+    height: 30px;            /* Define a largura horizontal da célula */
+    text-align: center;       /* Centraliza o texto horizontalmente */
+    vertical-align: middle;   /* Centraliza o texto verticalmente */
+    padding: 10px;
+    font-weight: normal;
+}
+td:last-child, th:last-child {
+    border-right: none;
+}
+th, td{
+    border-bottom: 1px solid #000
+}
+  /* Remove a borda inferior da última linha */
+tr:last-child td {
+    border-bottom: none !important;
+}
+th, td {
+    border-right: 0.5px solid #000;
+    padding: 8px;
+    text-align: left;
+}
+td{
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    text-align: center;
+    background-color: #D9D9D9;
+}
+@media (max-width: 425px){
+    h1{
+        width: 150px;
+    }
+    p#descricao{
+        width: 150px;
+    }
+    #linhaDoCabecalho{
+        width: 80%;
+    }
+}
+@media (max-width: 352px){
+    .opcaoMenu{
+        font-size: 0.4em;
+    }
+    #opcoes{
+        margin-right: -40px;
+    }
+    h1{
+        font-size: 1.3em;
+        width: 110px !important;
+    }
+    #linhaDoCabecalho{
+        width: 76% !important;
+    }
+    main{
+        width: 50% !important;
+    }
+    p#descricao{
+        width: 110px;
+    }
+}
+@media(max-width: 768px){
+    table{
+        transform: scale(0.5);
+        margin-top: -40px !important;
+        margin-left: -60px !important;
+        width: 800px;
+    }
+    .opcaoMenu{
+        font-size: 0.5em !important;
+    }
+}
+@media(max-width: 610px){
+    input#pesquisa{
+        margin-top: 50px;
+    }
+    table{
+        top: 200px;
+    }
+}
+@media(max-width: 512px){
+    table{
+        transform: scale(0.5);
+        margin-top: -100px;
+        margin-left: -120px;
+        width: 700px;
+    }
+    .opcaoMenu{
+        font-size: 0.4em !important;
+    }
+    #linhaDoCabecalho{
+        width: 92% !important;
+    }
+}
+@media(max-width: 438px){
+    table{
+        transform: scale(0.5);
+        margin-top: -140px;
+        margin-left: -20px !important;
+        width: 600px;
+    }
+    .opcaoMenu{
+        font-size: 0.4em !important;
+    }
+    #menu-container{
+        transform: scale(0.9)
+    }
+    h1{
+        margin-left: 2px;
+    }
+    p#descricao{
+        margin-left: 2px;
+    }
+    #menu{
+        margin-left: -15px;
+    }
+    #filtrar-container{
+        margin-left: 0 !important;
+    }
+    #logo{
+        width: 30px !important;
+        height: 30px !important;
+    }
+}
+@media(max-width: 425px){
+    table{
+        margin-top: 10px !important;
+    }
+}
+@media(max-width: 401px){
+    table{
+        width: 500px !important;
+        margin-top: 10px !important;
+        margin-left: 0px !important;
+    }
+}
+@media(max-width: 352px){
+    table{
+        transform: scale(0.37);
+        margin-left: -30px !important;
+        top: 220px !important
+    }
+    #menu{
+        transform: scale(0.9);
+        margin-top: -25px;
+    }
+}
+p#filtrar{
+    margin-left: 0;
+    margin-top: 15px;
+}
+#filtrar-container{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 30px;
+}
+#tipo{
+    margin-top: 15px;
+}
+select{
+    height: 20px;
+    margin-top: 15px;
+    margin-left: 10px;
+    background-color: #d9d9d9;
+    border-radius: 2px;
+    border: none;
+}
+p#selecione{
+    margin-left: 17px;
+    margin-top: 16px;
+}
+@media(max-width: 390px){
+    table{
+        top: 230px;
+    }
+}
